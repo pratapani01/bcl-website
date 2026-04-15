@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bcl-blue: #1B3A6B;
+  --bcl-gold: #C9A227;
+  --bcl-accent: #E63946;
+  --bcl-light: #F8F9FA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a2e;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bcl-blue);
+  border-radius: 3px;
+}
+
+/* Utility classes */
+.bcl-gradient {
+  background: linear-gradient(135deg, #1B3A6B 0%, #2d5a9e 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #C9A227 0%, #f0c84b 100%);
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-bcl-blue text-center mb-4;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  @apply text-gray-500 text-center text-lg mb-12 max-w-2xl mx-auto;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+}
+
+/* Hero slider */
+.slide-enter {
+  opacity: 0;
+  transform: scale(1.05);
+}
+.slide-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 800ms ease;
+}
+.slide-exit {
+  opacity: 1;
+}
+.slide-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+/* Timeline dot pulse */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 0.4; }
+  100% { transform: scale(0.8); opacity: 0.8; }
+}
+.pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
