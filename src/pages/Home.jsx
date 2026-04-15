@@ -143,7 +143,7 @@ function RoleCards() {
     {
       icon: '🏏',
       title: 'Batsman',
-      price: '₹2,500',
+      price: '₹2,000',
       desc: 'Power hitters, elegant stroke players, and consistent run-scorers — show your batting class.',
       features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],
       color: '#1B3A6B',
@@ -151,7 +151,7 @@ function RoleCards() {
     {
       icon: '⚾',
       title: 'Bowler',
-      price: '₹2,500',
+      price: '₹2,000',
       desc: 'Pace demons, spin wizards, and swing kings — let your bowling do the talking.',
       features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],
       color: '#E63946',
@@ -160,7 +160,7 @@ function RoleCards() {
     {
       icon: '⭐',
       title: 'All Rounder',
-      price: '₹3,500',
+      price: '₹3,000',
       desc: 'The complete package — bat, bowl, and field. The most sought-after profile in BCL.',
       features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'],
       color: '#C9A227',
