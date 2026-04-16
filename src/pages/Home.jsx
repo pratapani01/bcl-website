@@ -1,4 +1,6 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import HeroSlider from '../components/HeroSlider'
@@ -140,33 +142,36 @@ function TrialsSection() {
 // ——————————————————————————————
 function RoleCards() {
   const roles = [
-    {
-      icon: '🏏',
-      title: 'Batsman',
-      price: '₹2,000',
-      desc: 'Power hitters, elegant stroke players, and consistent run-scorers — show your batting class.',
-      features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],
-      color: '#1B3A6B',
-    },
-    {
-      icon: '⚾',
-      title: 'Bowler',
-      price: '₹2,000',
-      desc: 'Pace demons, spin wizards, and swing kings — let your bowling do the talking.',
-      features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],
-      color: '#E63946',
-      popular: false,
-    },
-    {
-      icon: '⭐',
-      title: 'All Rounder',
-      price: '₹3,000',
-      desc: 'The complete package — bat, bowl, and field. The most sought-after profile in BCL.',
-      features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'],
-      color: '#C9A227',
-      popular: true,
-    },
-  ]
+  {
+    icon: '🏏',
+    title: 'Batsman',
+    price: '₹2,000',
+    desc: 'Power hitters, elegant stroke players, and consistent run-scorers — show your batting class.',
+    features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],
+    color: '#1B3A6B',
+    formLink: 'https://forms.gle/TkUSWHGjo6NGrpG28', // ✅ CHANGE
+  },
+  {
+    icon: '⚾',
+    title: 'Bowler',
+    price: '₹2,000',
+    desc: 'Pace demons, spin wizards, and swing kings — let your bowling do the talking.',
+    features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],
+    color: '#E63946',
+    popular: false,
+    formLink: 'https://forms.gle/QUT1S3Sa195uS4YPA', // ✅ CHANGE
+  },
+  {
+    icon: '⭐',
+    title: 'All Rounder',
+    price: '₹3,000',
+    desc: 'The complete package — bat, bowl, and field. The most sought-after profile in BCL.',
+    features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'],
+    color: '#C9A227',
+    popular: true,
+    formLink: 'https://forms.gle/thqKgAwsuTqt4VARA', // ✅ CHANGE
+  },
+]
 
   return (
     <section className="py-20 bg-white" id="register">
@@ -229,7 +234,7 @@ function RoleCards() {
               </ul>
 
               <a
-                href={GOOGLE_FORM_URL}
+                href={role.formLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto text-center py-3 px-6 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105"
@@ -419,12 +424,15 @@ function Tagline() {
 // Final CTA
 // ——————————————————————————————
 function CtaSection() {
+  const [open, setOpen] = useState(false)
+
   return (
     <section className="py-20 bcl-gradient relative overflow-hidden">
       <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
         backgroundSize: '30px 30px'
       }} />
+
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -434,21 +442,25 @@ function CtaSection() {
           <span className="inline-block bg-bcl-gold text-bcl-blue text-xs font-black px-5 py-1.5 rounded-full uppercase tracking-widest mb-6">
             ⚡ Limited Slots
           </span>
+
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{ letterSpacing: '-1px' }}>
             Limited Slots Available
           </h2>
+
           <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
             Don't miss your chance to play in BCL Season 1. Registrations are filling up fast — secure your spot today.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={GOOGLE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+
+            {/* ✅ UPDATED BUTTON */}
+            <button
+              onClick={() => setOpen(true)}
               className="inline-flex items-center justify-center gap-2 bg-bcl-gold text-bcl-blue px-10 py-4 rounded-full font-black text-base hover:bg-white transition-all duration-300 hover:scale-105 shadow-xl shadow-black/20"
             >
               🏏 Register Now — It's Free to Start
-            </a>
+            </button>
+
             <a
               href="https://wa.me/919250324379"
               target="_blank"
@@ -457,9 +469,56 @@ function CtaSection() {
             >
               💬 WhatsApp Us
             </a>
+
           </div>
         </motion.div>
       </div>
+
+      {/* ✅ POPUP */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="bg-white rounded-2xl p-6 w-[90%] max-w-sm text-center"
+            >
+              <h2 className="text-xl font-bold mb-4">Select Your Role</h2>
+
+              <div className="flex flex-col gap-3">
+
+                <a href="https://forms.gle/TkUSWHGjo6NGrpG28" target="_blank" className="bg-bcl-blue text-white py-3 rounded-lg">
+                  🏏 Batsman
+                </a>
+
+                <a href="https://forms.gle/QUT1S3Sa195uS4YPA" target="_blank" className="bg-red-500 text-white py-3 rounded-lg">
+                  ⚾ Bowler
+                </a>
+
+                <a href="https://forms.gle/thqKgAwsuTqt4VARA" target="_blank" className="bg-yellow-500 text-white py-3 rounded-lg">
+                  ⭐ All Rounder
+                </a>
+
+              </div>
+
+              <button
+                onClick={() => setOpen(false)}
+                className="mt-4 text-sm text-gray-500"
+              >
+                Cancel
+              </button>
+
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </section>
   )
 }

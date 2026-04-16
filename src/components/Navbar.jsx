@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const GOOGLE_FORM_URL = 'https://forms.google.com' // placeholder
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [registerOpen, setRegisterOpen] = useState(false)
+
   const location = useLocation()
+  const dropdownRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -17,7 +18,19 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false)
+    setRegisterOpen(false)
   }, [location.pathname])
+
+  // ✅ CLICK OUTSIDE CLOSE
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setRegisterOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const navLinks = [
     { to: '/', label: 'Home' },
@@ -36,6 +49,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-12 h-12 rounded-full overflow-hidden bg-bcl-blue flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
@@ -78,15 +92,46 @@ export default function Navbar() {
         </nav>
 
         {/* CTA + Hamburger */}
-        <div className="flex items-center gap-4">
-          <a
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 bg-bcl-blue text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-bcl-gold hover:text-bcl-blue transition-all duration-300 shadow-md hover:shadow-lg"
-          >
-            <span></span> Register Now
-          </a>
+        <div className="flex items-center gap-4 relative">
+
+          {/* ✅ REGISTER DROPDOWN */}
+          <div ref={dropdownRef} className="hidden md:inline-flex relative">
+
+            <button
+              onClick={() => setRegisterOpen(!registerOpen)}
+              className="flex items-center gap-2 bg-bcl-blue text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-bcl-gold hover:text-bcl-blue transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              Register Now
+
+              {/* Arrow */}
+              <span className={`transition-transform duration-300 ${registerOpen ? 'rotate-180' : ''}`}>
+                ▼
+              </span>
+            </button>
+
+            <AnimatePresence>
+              {registerOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-12 right-0 bg-white rounded-xl shadow-lg border w-56 overflow-hidden z-50"
+                >
+                  <a href="https://forms.gle/TkUSWHGjo6NGrpG28" target="_blank" className="block px-4 py-3 text-sm hover:bg-gray-100">
+                    🏏 Batsman
+                  </a>
+                  <a href="https://forms.gle/QUT1S3Sa195uS4YPA" target="_blank" className="block px-4 py-3 text-sm hover:bg-gray-100">
+                    ⚾ Bowler
+                  </a>
+                  <a href="https://forms.gle/thqKgAwsuTqt4VARA" target="_blank" className="block px-4 py-3 text-sm hover:bg-gray-100">
+                    ⭐ All Rounder
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+          </div>
 
           {/* Hamburger */}
           <button
@@ -98,6 +143,7 @@ export default function Navbar() {
             <span className={`block h-0.5 w-6 bg-bcl-blue transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
             <span className={`block h-0.5 w-6 bg-bcl-blue transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
+
         </div>
       </div>
 
@@ -125,14 +171,18 @@ export default function Navbar() {
                   {link.label}
                 </NavLink>
               ))}
-              <a
-                href={GOOGLE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-bcl-gold text-bcl-blue px-5 py-2.5 rounded-full text-sm font-bold text-center hover:bg-bcl-blue hover:text-white transition-all duration-300"
-              >
-                🏏 Register Now
+
+              {/* Mobile Register Options */}
+              <a href="https://forms.gle/TkUSWHGjo6NGrpG28" target="_blank" className="bg-bcl-gold text-bcl-blue px-5 py-2.5 rounded-full text-sm font-bold text-center">
+                🏏 Batsman
               </a>
+              <a href="https://forms.gle/QUT1S3Sa195uS4YPA" target="_blank" className="bg-bcl-gold text-bcl-blue px-5 py-2.5 rounded-full text-sm font-bold text-center">
+                ⚾ Bowler
+              </a>
+              <a href="https://forms.gle/thqKgAwsuTqt4VARA" target="_blank" className="bg-bcl-gold text-bcl-blue px-5 py-2.5 rounded-full text-sm font-bold text-center">
+                ⭐ All Rounder
+              </a>
+
             </div>
           </motion.div>
         )}
