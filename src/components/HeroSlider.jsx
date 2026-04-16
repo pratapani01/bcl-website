@@ -8,7 +8,7 @@ const slides = [
     image: '/assets/img-hero1.jpg',
     badge: 'Season 1 – 2025',
     title: 'Bharatiya Cricket League',
-    subtitle: 'Season 1 Registrations Coming Soon',
+    subtitle: 'Season 1 Registrations Open',
     cta: 'Register Now',
     accent: '#C9A227',
   },
