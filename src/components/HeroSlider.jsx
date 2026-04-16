@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const GOOGLE_FORM_URL = 'https://forms.google.com'
+const GOOGLE_FORM_URL = '#'
 
 const slides = [
   {

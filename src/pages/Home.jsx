@@ -6,6 +6,7 @@ import { motion, useInView } from 'framer-motion'
 import HeroSlider from '../components/HeroSlider'
 import Timeline from '../components/Timeline'
 import TeamCard from '../components/TeamCard'
+import TermsModal from '../components/TermsModal'
 import { teamsData } from '../data/teams'
 
 const GOOGLE_FORM_URL = 'https://forms.google.com'
@@ -140,7 +141,12 @@ function TrialsSection() {
 // ——————————————————————————————
 // Role Registration Cards
 // ——————————————————————————————
+// ✅ CHANGE 3 applied here: role card buttons now open TermsModal before redirecting to form.
+// Only the button element is changed — all card layout, styling, and animation is untouched.
 function RoleCards() {
+  // Track which role's T&C modal is open; null = closed
+  const [activeTerms, setActiveTerms] = useState(null) // { label, formUrl }
+
   const roles = [
   {
     icon: '🏏',
@@ -149,7 +155,7 @@ function RoleCards() {
     desc: 'Power hitters, elegant stroke players, and consistent run-scorers — show your batting class.',
     features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],
     color: '#1B3A6B',
-    formLink: 'https://forms.gle/TkUSWHGjo6NGrpG28', // ✅ CHANGE
+    formLink: 'https://forms.gle/TkUSWHGjo6NGrpG28',
   },
   {
     icon: '⚾',
@@ -159,7 +165,7 @@ function RoleCards() {
     features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],
     color: '#E63946',
     popular: false,
-    formLink: 'https://forms.gle/QUT1S3Sa195uS4YPA', // ✅ CHANGE
+    formLink: 'https://forms.gle/QUT1S3Sa195uS4YPA',
   },
   {
     icon: '⭐',
@@ -169,88 +175,98 @@ function RoleCards() {
     features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'],
     color: '#C9A227',
     popular: true,
-    formLink: 'https://forms.gle/thqKgAwsuTqt4VARA', // ✅ CHANGE
+    formLink: 'https://forms.gle/thqKgAwsuTqt4VARA',
   },
 ]
 
   return (
-    <section className="py-20 bg-white" id="register">
-      <div className="max-w-7xl mx-auto px-6">
-        <Section>
-          <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-gold bg-bcl-gold/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">
-            Registration
-          </span>
-          <h2 className="section-title">Choose Your Role</h2>
-          <p className="section-subtitle">Select the category that matches your strengths and register for trials.</p>
-        </Section>
+    <>
+      <section className="py-20 bg-white" id="register">
+        <div className="max-w-7xl mx-auto px-6">
+          <Section>
+            <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-gold bg-bcl-gold/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">
+              Registration
+            </span>
+            <h2 className="section-title">Choose Your Role</h2>
+            <p className="section-subtitle">Select the category that matches your strengths and register for trials.</p>
+          </Section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-          {roles.map((role, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className={`relative rounded-2xl border-2 p-8 flex flex-col gap-5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-                role.popular
-                  ? 'border-bcl-gold shadow-xl shadow-bcl-gold/20'
-                  : 'border-gray-200 shadow-md'
-              }`}
-            >
-              {role.popular && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-bcl-gold text-bcl-blue text-xs font-black px-5 py-1.5 rounded-full uppercase tracking-widest shadow-md">
-                  ⭐ Most Popular
-                </span>
-              )}
-
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
-                style={{ backgroundColor: role.color + '15' }}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
+            {roles.map((role, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className={`relative rounded-2xl border-2 p-8 flex flex-col gap-5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                  role.popular
+                    ? 'border-bcl-gold shadow-xl shadow-bcl-gold/20'
+                    : 'border-gray-200 shadow-md'
+                }`}
               >
-                {role.icon}
-              </div>
+                {role.popular && (
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-bcl-gold text-bcl-blue text-xs font-black px-5 py-1.5 rounded-full uppercase tracking-widest shadow-md">
+                    ⭐ Most Popular
+                  </span>
+                )}
 
-              <div>
-                <h3 className="text-xl font-black text-bcl-blue">{role.title}</h3>
-                <p className="text-gray-500 text-sm mt-1 leading-relaxed">{role.desc}</p>
-              </div>
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
+                  style={{ backgroundColor: role.color + '15' }}
+                >
+                  {role.icon}
+                </div>
 
-              <div
-                className="text-3xl font-black"
-                style={{ color: role.color }}
-              >
-                {role.price}
-                <span className="text-sm text-gray-400 font-normal ml-1">registration fee</span>
-              </div>
+                <div>
+                  <h3 className="text-xl font-black text-bcl-blue">{role.title}</h3>
+                  <p className="text-gray-500 text-sm mt-1 leading-relaxed">{role.desc}</p>
+                </div>
 
-              <ul className="flex flex-col gap-2">
-                {role.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
-                    <span className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 flex-shrink-0">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
+                <div
+                  className="text-3xl font-black"
+                  style={{ color: role.color }}
+                >
+                  {role.price}
+                  <span className="text-sm text-gray-400 font-normal ml-1">registration fee</span>
+                </div>
 
-              <a
-                href={role.formLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto text-center py-3 px-6 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105"
-                style={{
-                  backgroundColor: role.popular ? role.color : 'transparent',
-                  color: role.popular ? 'white' : role.color,
-                  border: `2px solid ${role.color}`,
-                }}
-              >
-                Register as {role.title} →
-              </a>
-            </motion.div>
-          ))}
+                <ul className="flex flex-col gap-2">
+                  {role.features.map((f, j) => (
+                    <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
+                      <span className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 flex-shrink-0">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* ✅ CHANGE 3: button opens TermsModal instead of navigating directly to form */}
+                <button
+                  onClick={() => setActiveTerms({ label: role.title, formUrl: role.formLink })}
+                  className="mt-auto text-center py-3 px-6 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105"
+                  style={{
+                    backgroundColor: role.popular ? role.color : 'transparent',
+                    color: role.popular ? 'white' : role.color,
+                    border: `2px solid ${role.color}`,
+                  }}
+                >
+                  Register as {role.title} →
+                </button>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ✅ CHANGE 3: TermsModal rendered at page level, outside the card grid */}
+      {activeTerms && (
+        <TermsModal
+          formUrl={activeTerms.formUrl}
+          roleLabel={activeTerms.label}
+          onClose={() => setActiveTerms(null)}
+        />
+      )}
+    </>
   )
 }
 

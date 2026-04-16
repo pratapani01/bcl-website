@@ -239,7 +239,7 @@ export default function About() {
               Season 1 is just the beginning. Join now and become a founding player of the Bharatiya Cricket League.
             </p>
             <a
-              href="https://forms.google.com"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-bcl-gold text-bcl-blue px-10 py-4 rounded-full font-black text-base hover:bg-white transition-all duration-300 hover:scale-105"
