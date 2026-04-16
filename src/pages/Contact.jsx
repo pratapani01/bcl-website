@@ -288,7 +288,7 @@ export default function Contact() {
           <div className="flex flex-col gap-4">
             {[
               { q: 'How do I register for BCL Season 1?', a: 'Click the "Register Now" button on the homepage, fill out the Google Form with your details, and pay the registration fee based on your role.' },
-              { q: 'What is the registration fee?', a: 'Batsmen and Bowlers: ₹2,500. All Rounders: ₹3,500. This covers your trial entry and player profile creation.' },
+              { q: 'What is the registration fee?', a: 'Batsmen and Bowlers: ₹2,000. All Rounders: ₹3,000. This covers your trial entry and player profile creation.' },
               { q: 'Which cities have BCL trials?', a: 'BCL is conducting trials in 20+ cities including Delhi, Mumbai, Bengaluru, Chennai, Kolkata, Hyderabad, Lucknow, Jaipur, Pune, Ahmedabad, and more.' },
               { q: 'What is the auction base price?', a: 'Selected players enter the BCL Auction with a minimum base price of ₹51,000. Franchise teams bid for your services.' },
             ].map((faq, i) => (
