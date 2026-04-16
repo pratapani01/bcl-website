@@ -5,7 +5,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function TermsModal({ formUrl, roleLabel, onClose }) {
+export default function TermsModal({ formUrl, roleLabel, onClose, infoOnly = false }) {
   const [agreed, setAgreed] = useState(false)
 
   // Lock body scroll while modal is open
@@ -22,6 +22,7 @@ export default function TermsModal({ formUrl, roleLabel, onClose }) {
   }, [onClose])
 
   const handleContinue = () => {
+    if (infoOnly) { onClose(); return }
     if (!agreed) return
     window.open(formUrl, '_blank', 'noopener,noreferrer')
     onClose()
@@ -116,35 +117,37 @@ export default function TermsModal({ formUrl, roleLabel, onClose }) {
               </ul>
             </div>
 
-            {/* Checkbox */}
-            <label className="flex items-start gap-3 cursor-pointer group select-none">
-              <div className="relative mt-0.5 flex-shrink-0">
-                <input
-                  type="checkbox"
-                  checked={agreed}
-                  onChange={(e) => setAgreed(e.target.checked)}
-                  className="sr-only"
-                />
-                <div
-                  className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all duration-200 ${
-                    agreed
-                      ? 'bg-bcl-blue border-bcl-blue'
-                      : 'border-gray-300 group-hover:border-bcl-blue bg-white'
-                  }`}
-                >
-                  {agreed && (
-                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  )}
+            {/* Checkbox — hidden in info-only mode */}
+            {!infoOnly && (
+              <label className="flex items-start gap-3 cursor-pointer group select-none">
+                <div className="relative mt-0.5 flex-shrink-0">
+                  <input
+                    type="checkbox"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    className="sr-only"
+                  />
+                  <div
+                    className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all duration-200 ${
+                      agreed
+                        ? 'bg-bcl-blue border-bcl-blue'
+                        : 'border-gray-300 group-hover:border-bcl-blue bg-white'
+                    }`}
+                  >
+                    {agreed && (
+                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </div>
                 </div>
-              </div>
-              <span className="text-sm text-gray-700 leading-snug">
-                I agree to the{' '}
-                <strong className="text-bcl-blue">terms and conditions</strong>{' '}
-                and confirm I am eligible to participate in BCL Season 1.
-              </span>
-            </label>
+                <span className="text-sm text-gray-700 leading-snug">
+                  I agree to the{' '}
+                  <strong className="text-bcl-blue">terms and conditions</strong>{' '}
+                  and confirm I am eligible to participate in BCL Season 1.
+                </span>
+              </label>
+            )}
 
             {/* Actions */}
             <div className="flex gap-3 pt-1">
@@ -152,19 +155,21 @@ export default function TermsModal({ formUrl, roleLabel, onClose }) {
                 onClick={onClose}
                 className="flex-1 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-semibold text-sm hover:bg-gray-50 transition-colors"
               >
-                Cancel
+                {infoOnly ? 'Close' : 'Cancel'}
               </button>
-              <button
-                onClick={handleContinue}
-                disabled={!agreed}
-                className={`flex-1 py-3 rounded-xl font-black text-sm transition-all duration-300 ${
-                  agreed
-                    ? 'bg-bcl-blue text-white hover:bg-bcl-gold hover:text-bcl-blue shadow-lg hover:scale-[1.02]'
-                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                }`}
-              >
-                Continue →
-              </button>
+              {!infoOnly && (
+                <button
+                  onClick={handleContinue}
+                  disabled={!agreed}
+                  className={`flex-1 py-3 rounded-xl font-black text-sm transition-all duration-300 ${
+                    agreed
+                      ? 'bg-bcl-blue text-white hover:bg-bcl-gold hover:text-bcl-blue shadow-lg hover:scale-[1.02]'
+                      : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  }`}
+                >
+                  Continue →
+                </button>
+              )}
             </div>
           </div>
         </motion.div>

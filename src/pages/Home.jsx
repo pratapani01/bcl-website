@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react'
-import { AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
@@ -7,9 +6,8 @@ import HeroSlider from '../components/HeroSlider'
 import Timeline from '../components/Timeline'
 import TeamCard from '../components/TeamCard'
 import TermsModal from '../components/TermsModal'
+import RoleSelectModal from '../components/RoleSelectModal'
 import { teamsData } from '../data/teams'
-
-const GOOGLE_FORM_URL = 'https://forms.google.com'
 
 // ——————————————————————————————
 // Section wrapper with fade-in
@@ -320,9 +318,9 @@ function WhyJoin() {
 }
 
 // ——————————————————————————————
-// Gallery
+// Gallery — COMMENTED OUT (no images available yet; uncomment when images are ready)
 // ——————————————————————————————
-function Gallery() {
+/* function Gallery() {
   const images = Array.from({ length: 8 }, (_, i) => `/assets/img${i + 1}.jpg`)
   const gradients = [
     'from-bcl-blue to-blue-800',
@@ -376,7 +374,7 @@ function Gallery() {
       </div>
     </section>
   )
-}
+} */
 
 // ——————————————————————————————
 // Teams Section
@@ -469,7 +467,7 @@ function CtaSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
-            {/* ✅ UPDATED BUTTON */}
+            {/* ✅ Opens RoleSelectModal → TermsModal → Google Form */}
             <button
               onClick={() => setOpen(true)}
               className="inline-flex items-center justify-center gap-2 bg-bcl-gold text-bcl-blue px-10 py-4 rounded-full font-black text-base hover:bg-white transition-all duration-300 hover:scale-105 shadow-xl shadow-black/20"
@@ -490,50 +488,10 @@ function CtaSection() {
         </motion.div>
       </div>
 
-      {/* ✅ POPUP */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-white rounded-2xl p-6 w-[90%] max-w-sm text-center"
-            >
-              <h2 className="text-xl font-bold mb-4">Select Your Role</h2>
-
-              <div className="flex flex-col gap-3">
-
-                <a href="https://forms.gle/TkUSWHGjo6NGrpG28" target="_blank" className="bg-bcl-blue text-white py-3 rounded-lg">
-                  🏏 Batsman
-                </a>
-
-                <a href="https://forms.gle/QUT1S3Sa195uS4YPA" target="_blank" className="bg-red-500 text-white py-3 rounded-lg">
-                  ⚾ Bowler
-                </a>
-
-                <a href="https://forms.gle/thqKgAwsuTqt4VARA" target="_blank" className="bg-yellow-500 text-white py-3 rounded-lg">
-                  ⭐ All Rounder
-                </a>
-
-              </div>
-
-              <button
-                onClick={() => setOpen(false)}
-                className="mt-4 text-sm text-gray-500"
-              >
-                Cancel
-              </button>
-
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* RoleSelectModal → TermsModal → Google Form */}
+      {open && (
+        <RoleSelectModal onClose={() => setOpen(false)} />
+      )}
 
     </section>
   )
@@ -553,7 +511,7 @@ export default function Home() {
       <RoleCards />
       <WhyJoin />
       <TeamsSection />
-      <Gallery />
+      {/* <Gallery /> */}{/* Gallery commented out — uncomment when images are ready */}
       <CtaSection />
     </>
   )

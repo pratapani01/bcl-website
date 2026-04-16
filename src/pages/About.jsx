@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+import RoleSelectModal from '../components/RoleSelectModal'
 
 const stats = [
   { value: '10', label: 'Franchise Teams', icon: '🏏' },
@@ -36,6 +38,7 @@ const milestones = [
 ]
 
 export default function About() {
+  const [roleModalOpen, setRoleModalOpen] = useState(false)
   return (
     <div className="pt-20 min-h-screen">
       {/* Hero */}
@@ -187,7 +190,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline / Milestones */}
+      {/* Milestones section — COMMENTED OUT; uncomment to restore */}
+      {/*
       <section className="py-20 bg-bcl-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -219,6 +223,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      */}
 
       {/* CTA */}
       <section className="py-20 bcl-gradient relative overflow-hidden">
@@ -238,17 +243,19 @@ export default function About() {
             <p className="text-white/70 mb-8">
               Season 1 is just the beginning. Join now and become a founding player of the Bharatiya Cricket League.
             </p>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setRoleModalOpen(true)}
               className="inline-flex items-center gap-2 bg-bcl-gold text-bcl-blue px-10 py-4 rounded-full font-black text-base hover:bg-white transition-all duration-300 hover:scale-105"
             >
               🏏 Register for Season 1
-            </a>
+            </button>
           </motion.div>
         </div>
       </section>
+
+      {roleModalOpen && (
+        <RoleSelectModal onClose={() => setRoleModalOpen(false)} />
+      )}
     </div>
   )
 }

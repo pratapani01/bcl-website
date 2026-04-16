@@ -32,6 +32,15 @@ export default function Contact() {
       bg: '#dcfce7',
     },
     {
+      icon: '📧',
+      label: 'Email',
+      value: 'bcl.t20.cricket@gmail.com',
+      href: 'mailto:bcl.t20.cricket@gmail.com',
+      cta: 'Send Email',
+      color: '#E63946',
+      bg: '#FEF2F2',
+    },
+    {
       icon: '📞',
       label: 'Call Us',
       value: '92503 24379',
@@ -101,7 +110,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              {/* Contact Cards */}
+              {/* Contact Cards — stacked layout to prevent mobile overflow */}
               <div className="flex flex-col gap-4">
                 {contactInfo.map((item, i) => (
                   <motion.div
@@ -110,24 +119,29 @@ export default function Contact() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="bg-white rounded-2xl p-5 shadow-sm flex items-center gap-5 hover:shadow-md transition-shadow"
+                    className="bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
-                      style={{ backgroundColor: item.bg }}
-                    >
-                      {item.icon}
+                    {/* Top row: icon + label/value */}
+                    <div className="flex items-center gap-4">
+                      <div
+                        className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
+                        style={{ backgroundColor: item.bg }}
+                      >
+                        {item.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">{item.label}</p>
+                        <p className="font-bold text-bcl-blue mt-0.5 text-sm break-all">{item.value}</p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">{item.label}</p>
-                      <p className="font-bold text-bcl-blue mt-0.5">{item.value}</p>
-                    </div>
+
+                    {/* CTA button below — full width on its own row, no overflow */}
                     {item.href && item.cta && (
                       <a
                         href={item.href}
                         target={item.href.startsWith('http') ? '_blank' : undefined}
                         rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-sm font-bold px-4 py-2 rounded-xl text-white flex-shrink-0 hover:opacity-90 transition-opacity"
+                        className="mt-4 block w-full text-center text-sm font-bold px-4 py-2.5 rounded-xl text-white hover:opacity-90 transition-opacity"
                         style={{ backgroundColor: item.color }}
                       >
                         {item.cta}
@@ -138,7 +152,7 @@ export default function Contact() {
               </div>
 
               {/* Social */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm">
+              {/* <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <h3 className="text-sm font-bold text-bcl-blue mb-4 uppercase tracking-wider">Follow BCL</h3>
                 <div className="flex gap-4">
                   {[
@@ -159,7 +173,7 @@ export default function Contact() {
                     </a>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* RIGHT: Enquiry Form */}

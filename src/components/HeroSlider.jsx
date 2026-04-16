@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import RoleSelectModal from './RoleSelectModal'
 
-const GOOGLE_FORM_URL = '#'
+const GOOGLE_FORM_URL = 'https://forms.google.com'
 
 const slides = [
   {
     image: '/assets/img-hero1.jpg',
     badge: 'Season 1 – 2025',
     title: 'Bharatiya Cricket League',
-    subtitle: 'Season 1 Registrations Open',
+    subtitle: 'Season 1 Registrations Coming Soon',
     cta: 'Register Now',
     accent: '#C9A227',
   },
@@ -40,6 +41,7 @@ const gradients = [
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0)
   const [imgErrors, setImgErrors] = useState({})
+  const [roleModalOpen, setRoleModalOpen] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,6 +53,7 @@ export default function HeroSlider() {
   const slide = slides[current]
 
   return (
+    <>
     <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
       {/* Background */}
       <AnimatePresence mode="wait">
@@ -131,15 +134,13 @@ export default function HeroSlider() {
                 transition={{ delay: 0.6 }}
                 className="flex flex-wrap gap-4"
               >
-                <a
-                  href={GOOGLE_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setRoleModalOpen(true)}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                   style={{ backgroundColor: slide.accent, color: slide.accent === '#C9A227' ? '#1B3A6B' : 'white' }}
                 >
                   🏏 {slide.cta}
-                </a>
+                </button>
                 <a
                   href="#about-bcl"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base border-2 border-white/40 text-white hover:bg-white hover:text-bcl-blue transition-all duration-300"
@@ -178,5 +179,10 @@ export default function HeroSlider() {
         </svg>
       </motion.div>
     </section>
+
+    {roleModalOpen && (
+      <RoleSelectModal onClose={() => setRoleModalOpen(false)} />
+    )}
+  </>
   )
 }

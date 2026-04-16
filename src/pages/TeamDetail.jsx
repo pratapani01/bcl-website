@@ -1,12 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { teamsData } from '../data/teams'
-
-const GOOGLE_FORM_URL = 'https://forms.google.com'
+import RoleSelectModal from '../components/RoleSelectModal'
 
 export default function TeamDetail() {
   const { teamName } = useParams()
   const navigate = useNavigate()
+  const [roleModalOpen, setRoleModalOpen] = useState(false)
 
   const team = teamsData.find(
     (t) => t.name.toLowerCase() === decodeURIComponent(teamName).toLowerCase()
@@ -84,6 +85,13 @@ export default function TeamDetail() {
             </h2>
             <p className="text-gray-600 leading-relaxed text-base">{team.about}</p>
 
+            {team.motto && (
+              <div className="mt-6 bg-bcl-light border-l-4 rounded-r-xl px-5 py-4" style={{ borderColor: color }}>
+                <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-1">Team Motto</p>
+                <p className="font-black italic" style={{ color }}>"{ team.motto }"</p>
+              </div>
+            )}
+
             <div className="mt-8 pt-8 border-t border-gray-100">
               <h3 className="text-base font-bold text-bcl-blue mb-4">Team Identity</h3>
               <div className="flex items-center gap-4">
@@ -118,6 +126,8 @@ export default function TeamDetail() {
                   { label: 'Abbreviation', value: team.abbr, icon: '🏏' },
                   { label: 'Season', value: 'BCL Season 1', icon: '📅' },
                   { label: 'Status', value: 'Recruiting', icon: '🟢' },
+                  ...(team.captain ? [{ label: 'Captain', value: team.captain, icon: '👑' }] : []),
+                  ...(team.strength ? [{ label: 'Team Strength', value: team.strength, icon: '💪' }] : []),
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
                     <span className="text-lg">{item.icon}</span>
@@ -140,18 +150,20 @@ export default function TeamDetail() {
             </div>
 
             {/* CTA */}
-            <a
-              href={GOOGLE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setRoleModalOpen(true)}
               className="w-full py-4 rounded-xl font-bold text-sm text-center text-white transition-all duration-300 hover:opacity-90 hover:-translate-y-1 shadow-lg"
               style={{ backgroundColor: color }}
             >
               Register to Play in BCL →
-            </a>
+            </button>
           </motion.div>
         </div>
       </div>
+
+      {roleModalOpen && (
+        <RoleSelectModal onClose={() => setRoleModalOpen(false)} />
+      )}
     </div>
   )
 }
