@@ -7,6 +7,8 @@ import Timeline from '../components/Timeline'
 import TeamCard from '../components/TeamCard'
 import TermsModal from '../components/TermsModal'
 import RoleSelectModal from '../components/RoleSelectModal'
+import ComingSoonModal from '../components/ComingSoonModal'
+import REGISTRATION_OPEN from '../registrationConfig'
 import { teamsData } from '../data/teams'
 
 // ——————————————————————————————
@@ -144,6 +146,7 @@ function TrialsSection() {
 function RoleCards() {
   // Track which role's T&C modal is open; null = closed
   const [activeTerms, setActiveTerms] = useState(null) // { label, formUrl }
+  const [comingSoonOpen, setComingSoonOpen] = useState(false)
 
   const roles = [
   {
@@ -240,7 +243,13 @@ function RoleCards() {
 
                 {/* ✅ CHANGE 3: button opens TermsModal instead of navigating directly to form */}
                 <button
-                  onClick={() => setActiveTerms({ label: role.title, formUrl: role.formLink })}
+                  onClick={() => {
+                    if (!REGISTRATION_OPEN) {
+                      setComingSoonOpen(true)
+                    } else {
+                      setActiveTerms({ label: role.title, formUrl: role.formLink })
+                    }
+                  }}
                   className="mt-auto text-center py-3 px-6 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105"
                   style={{
                     backgroundColor: role.popular ? role.color : 'transparent',
@@ -263,6 +272,10 @@ function RoleCards() {
           roleLabel={activeTerms.label}
           onClose={() => setActiveTerms(null)}
         />
+      )}
+
+      {comingSoonOpen && (
+        <ComingSoonModal onClose={() => setComingSoonOpen(false)} />
       )}
     </>
   )
@@ -439,6 +452,7 @@ function Tagline() {
 // ——————————————————————————————
 function CtaSection() {
   const [open, setOpen] = useState(false)
+  const [comingSoonOpen, setComingSoonOpen] = useState(false)
 
   return (
     <section className="py-20 bcl-gradient relative overflow-hidden">
@@ -467,9 +481,15 @@ function CtaSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
-            {/* ✅ Opens RoleSelectModal → TermsModal → Google Form */}
+            {/* ✅ Opens RoleSelectModal → TermsModal → Google Form (or ComingSoon if closed) */}
             <button
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                if (!REGISTRATION_OPEN) {
+                  setComingSoonOpen(true)
+                } else {
+                  setOpen(true)
+                }
+              }}
               className="inline-flex items-center justify-center gap-2 bg-bcl-gold text-bcl-blue px-10 py-4 rounded-full font-black text-base hover:bg-white transition-all duration-300 hover:scale-105 shadow-xl shadow-black/20"
             >
               🏏 Register Now — It's Free to Start
@@ -491,6 +511,10 @@ function CtaSection() {
       {/* RoleSelectModal → TermsModal → Google Form */}
       {open && (
         <RoleSelectModal onClose={() => setOpen(false)} />
+      )}
+
+      {comingSoonOpen && (
+        <ComingSoonModal onClose={() => setComingSoonOpen(false)} />
       )}
 
     </section>

@@ -10,6 +10,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import TermsModal from './TermsModal'
 import RoleSelectModal from './RoleSelectModal'
+import ComingSoonModal from './ComingSoonModal'
+import REGISTRATION_OPEN from '../registrationConfig'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -19,6 +21,9 @@ export default function Navbar() {
   // ✅ CHANGE 2 & 3: State for mobile role-select modal and desktop T&C modal
   const [mobileRoleModalOpen, setMobileRoleModalOpen] = useState(false)
   const [desktopTerms, setDesktopTerms] = useState(null) // { label, formUrl }
+
+  // Coming Soon modal state
+  const [comingSoonOpen, setComingSoonOpen] = useState(false)
 
   const location = useLocation()
   const dropdownRef = useRef(null)
@@ -123,17 +128,25 @@ export default function Navbar() {
             {/* ✅ Desktop Register dropdown — CHANGE 3: clicking a role now opens TermsModal */}
             <div ref={dropdownRef} className="hidden md:inline-flex relative">
               <button
-                onClick={() => setRegisterOpen(!registerOpen)}
+                onClick={() => {
+                  if (!REGISTRATION_OPEN) {
+                    setComingSoonOpen(true)
+                  } else {
+                    setRegisterOpen(!registerOpen)
+                  }
+                }}
                 className="flex items-center gap-2 bg-bcl-blue text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-bcl-gold hover:text-bcl-blue transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 Register Now
-                <span className={`transition-transform duration-300 ${registerOpen ? 'rotate-180' : ''}`}>
-                  ▼
-                </span>
+                {REGISTRATION_OPEN && (
+                  <span className={`transition-transform duration-300 ${registerOpen ? 'rotate-180' : ''}`}>
+                    ▼
+                  </span>
+                )}
               </button>
 
               <AnimatePresence>
-                {registerOpen && (
+                {REGISTRATION_OPEN && registerOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -201,8 +214,12 @@ export default function Navbar() {
                 {/* ✅ CHANGE 2: Single "Register Now" button replaces the 3 direct role links */}
                 <button
                   onClick={() => {
-                    setMenuOpen(false)            // close hamburger menu first
-                    setMobileRoleModalOpen(true)  // open role-select modal
+                    setMenuOpen(false)
+                    if (!REGISTRATION_OPEN) {
+                      setComingSoonOpen(true)
+                    } else {
+                      setMobileRoleModalOpen(true)
+                    }
                   }}
                   className="bg-bcl-gold text-bcl-blue px-5 py-3 rounded-full text-sm font-black text-center hover:bg-bcl-blue hover:text-white transition-all duration-300"
                 >
@@ -226,6 +243,11 @@ export default function Navbar() {
           roleLabel={desktopTerms.label}
           onClose={() => setDesktopTerms(null)}
         />
+      )}
+
+      {/* Coming Soon modal — shown when REGISTRATION_OPEN === false */}
+      {comingSoonOpen && (
+        <ComingSoonModal onClose={() => setComingSoonOpen(false)} />
       )}
     </>
   )

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import RoleSelectModal from './RoleSelectModal'
+import ComingSoonModal from './ComingSoonModal'
+import REGISTRATION_OPEN from '../registrationConfig'
 
 const GOOGLE_FORM_URL = 'https://forms.google.com'
 
@@ -42,6 +44,7 @@ export default function HeroSlider() {
   const [current, setCurrent] = useState(0)
   const [imgErrors, setImgErrors] = useState({})
   const [roleModalOpen, setRoleModalOpen] = useState(false)
+  const [comingSoonOpen, setComingSoonOpen] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -135,7 +138,13 @@ export default function HeroSlider() {
                 className="flex flex-wrap gap-4"
               >
                 <button
-                  onClick={() => setRoleModalOpen(true)}
+                  onClick={() => {
+                    if (!REGISTRATION_OPEN) {
+                      setComingSoonOpen(true)
+                    } else {
+                      setRoleModalOpen(true)
+                    }
+                  }}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                   style={{ backgroundColor: slide.accent, color: slide.accent === '#C9A227' ? '#1B3A6B' : 'white' }}
                 >
@@ -182,6 +191,10 @@ export default function HeroSlider() {
 
     {roleModalOpen && (
       <RoleSelectModal onClose={() => setRoleModalOpen(false)} />
+    )}
+
+    {comingSoonOpen && (
+      <ComingSoonModal onClose={() => setComingSoonOpen(false)} />
     )}
   </>
   )
