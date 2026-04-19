@@ -12,8 +12,8 @@ export const teamsData = [
     about:
       "Delhi Dominators represent the spirit of India’s capital — aggressive, dynamic, and relentless. Built from top talent across NCR, they aim to dominate BCL Season 1.",
     colors: ['#E63946', '#1B3A6B'],
-    captain: 'Arjun Sharma',
-    strength: 'Power Batting',
+    // captain: 'Arjun Sharma',
+    // strength: 'Power Batting',
     motto: 'Strike First, Strike Hard',
   },
   {
@@ -26,8 +26,8 @@ export const teamsData = [
     about:
       'Mumbai Mavericks carry the legacy of India’s cricket capital. Known for explosive batting and smart bowling strategies.',
     colors: ['#1B3A6B', '#C9A227'],
-    captain: 'Rohan Patil',
-    strength: 'All-Round Balance',
+    // captain: 'Rohan Patil',
+    // strength: 'All-Round Balance',
     motto: 'Born on the Streets, Built for the Stage',
   },
   {
@@ -40,8 +40,8 @@ export const teamsData = [
     about:
       'Bengaluru Blasters combine data-driven strategy with raw cricketing talent. Discipline meets power here.',
     colors: ['#C9A227', '#1B3A6B'],
-    captain: 'Kiran Reddy',
-    strength: 'Strategic Play',
+    // captain: 'Kiran Reddy',
+    // strength: 'Strategic Play',
     motto: 'Code the Game, Win the Match',
   },
   {
@@ -54,8 +54,8 @@ export const teamsData = [
     about:
       'Chennai Chargers are known for resilience and experience. A balanced squad with deadly spin attack.',
     colors: ['#E07340', '#1B3A6B'],
-    captain: 'Suresh Murugan',
-    strength: 'Spin Bowling',
+    // captain: 'Suresh Murugan',
+    // strength: 'Spin Bowling',
     motto: 'Patience is Power',
   },
   {
@@ -68,9 +68,9 @@ export const teamsData = [
     about:
       'Kolkata Knights bring heritage and passion. Masters of chasing big targets under pressure.',
     colors: ['#9C27B0', '#C9A227'],
-    captain: 'Debashish Bose',
-    strength: 'Chase Masters',
-    motto: 'Never Say Die',
+    // captain: 'Debashish Bose',
+    // strength: 'Chase Masters',
+    // motto: 'Never Say Die',
   },
   {
     id: 6,
@@ -82,8 +82,8 @@ export const teamsData = [
     about:
       'Hyderabad Hurricanes dominate with pace and aggression. Fast, fearless, and always attacking.',
     colors: ['#FF5722', '#1B3A6B'],
-    captain: 'Mohammed Farhan',
-    strength: 'Pace Attack',
+    // captain: 'Mohammed Farhan',
+    // strength: 'Pace Attack',
     motto: 'Hit Like a Hurricane',
   },
   {
@@ -96,8 +96,8 @@ export const teamsData = [
     about:
       'Rajasthan Royals Elite combine royal heritage with modern cricketing excellence.',
     colors: ['#E63946', '#C9A227'],
-    captain: 'Vikram Singh Rathore',
-    strength: 'Batting Depth',
+    // captain: 'Vikram Singh Rathore',
+    // strength: 'Batting Depth',
     motto: 'Royal By Blood, Champions By Choice',
   },
   {
@@ -110,8 +110,8 @@ export const teamsData = [
     about:
       'Lucknow Legends roar with pride and passion, representing the heartland of cricket.',
     colors: ['#4CAF50', '#1B3A6B'],
-    captain: 'Aditya Verma',
-    strength: 'Experienced Squad',
+    // captain: 'Aditya Verma',
+    // strength: 'Experienced Squad',
     motto: 'From the Heartland to the Trophy',
   },
   {
@@ -124,8 +124,8 @@ export const teamsData = [
     about:
       'Punjab Panthers are agile and aggressive. A perfect mix of youth and experience.',
     colors: ['#00BCD4', '#1B3A6B'],
-    captain: 'Gurpreet Sandhu',
-    strength: 'Youth & Energy',
+    // captain: 'Gurpreet Sandhu',
+    // strength: 'Youth & Energy',
     motto: 'Roar Loud, Play Proud',
   },
   {
@@ -138,8 +138,8 @@ export const teamsData = [
     about:
       'Gujarat Gladiators play fearless cricket with explosive batting power.',
     colors: ['#607D8B', '#C9A227'],
-    captain: 'Nirav Patel',
-    strength: 'Explosive Batting',
+    // captain: 'Nirav Patel',
+    // strength: 'Explosive Batting',
     motto: 'Built Tough, Play Tougher',
   },
 ]
