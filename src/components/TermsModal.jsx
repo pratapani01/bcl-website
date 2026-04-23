@@ -89,9 +89,12 @@ export default function TermsModal({ formUrl, roleLabel, onClose, infoOnly = fal
               <div className="flex items-start gap-3">
                 <span className="text-lg mt-0.5 flex-shrink-0">⚠️</span>
                 <p className="text-amber-900 text-sm font-bold leading-snug">
-                  Eligibility Restriction
+                  Eligibility Restrictions
                 </p>
               </div>
+              <p className="text-amber-800 text-sm leading-relaxed">
+                <strong>Age Eligibility:</strong> Only users aged between <strong>18 and 45 years</strong> are allowed to use this platform.
+              </p>
               <p className="text-amber-800 text-sm leading-relaxed">
                 Players who have played any official <strong>Board-level or National-level cricket</strong>{' '}
                 (e.g., BCCI tournaments, state-level official tournaments) are{' '}

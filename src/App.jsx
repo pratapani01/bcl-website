@@ -7,6 +7,8 @@ import TeamDetail from './pages/TeamDetail'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import ScrollToTop from './components/ScrollToTop'
+import WhatsAppFloat from './components/WhatsAppFloat'
+import BCLWelcomePopup from './components/BCLWelcomePopup'
 
 function App() {
   return (
@@ -23,6 +25,12 @@ function App() {
         </Routes>
       </main>
       <Footer />
+
+      {/* Floating WhatsApp button — rendered outside main so it's always on top */}
+      <WhatsAppFloat />
+
+      {/* BCL Welcome Popup — auto-shows after 6s or first scroll */}
+      <BCLWelcomePopup />
     </div>
   )
 }
