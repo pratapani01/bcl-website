@@ -97,7 +97,7 @@ export default function Navbar() {
 
           {/* ✅ CHANGE 1: Centered "BCL" label — mobile only (hidden at sm breakpoint = 640px+) */}
           <span className="sm:hidden absolute left-1/2 -translate-x-1/2 text-bcl-blue font-black text-base tracking-widest uppercase pointer-events-none select-none">
-            BCL
+            Bharatiya Cricket League
           </span>
 
           {/* Desktop Nav — unchanged */}
