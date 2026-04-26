@@ -9,7 +9,7 @@ const GOOGLE_FORM_URL = 'https://forms.google.com'
 const slides = [
   {
     image: '/assets/img-hero1.jpg',
-    badge: 'Season 1 – 2025',
+    badge: 'Season 1 – 2026',
     title: 'Bharatiya Cricket League',
     subtitle: 'Season 1 Registrations Coming Soon',
     cta: 'Register Now',
