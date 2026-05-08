@@ -2,200 +2,129 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import RoleSelectModal from './RoleSelectModal'
 import ComingSoonModal from './ComingSoonModal'
-import REGISTRATION_OPEN from '../registrationConfig'
+import { useSettings } from '../contexts/SettingsContext'
 
-const GOOGLE_FORM_URL = 'https://forms.google.com'
-
-const slides = [
-  {
-    image: '/assets/img-hero1.jpg',
-    badge: 'Season 1 – 2026',
-    title: 'Bharatiya Cricket League',
-    subtitle: 'Season 1 Registrations Coming Soon',
-    cta: 'Register Now',
-    accent: '#C9A227',
-  },
-  {
-    image: '/assets/img-hero2.jpg',
-    badge: '20+ Cities · Nationwide',
-    title: 'Your Stage Awaits',
-    subtitle: 'Trials happening across India. Get scouted, get auctioned, get playing.',
-    cta: 'Join the League',
-    accent: '#E63946',
-  },
-  {
-    image: '/assets/img-hero3.webp',
-    badge: 'Prize Pool',
-    title: '₹22 Lakhs in Prizes',
-    subtitle: 'Winner takes ₹15 Lakhs · Runner Up wins ₹7 Lakhs',
-    cta: 'Register Now',
-    accent: '#C9A227',
-  },
+const STATIC_SLIDES = [
+  { image: '/assets/img-hero1.jpg', badge: 'Season 1 – 2026',      accent: '#C9A227', cta: 'Register Now'   },
+  { image: '/assets/img-hero2.jpg', badge: '20+ Cities · Nationwide', accent: '#E63946', cta: 'Join the League' },
+  { image: '/assets/img-hero3.webp', badge: 'Prize Pool',            accent: '#C9A227', cta: 'Register Now'   },
 ]
 
-// Placeholder background when no image is available
-const gradients = [
-  'linear-gradient(135deg, #1B3A6B 0%, #0d2240 40%, #2d5a9e 100%)',
-  'linear-gradient(135deg, #0d2240 0%, #1B3A6B 50%, #1a4a8a 100%)',
-  'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+const GRADIENTS = [
+  'linear-gradient(135deg,#1B3A6B 0%,#0d2240 40%,#2d5a9e 100%)',
+  'linear-gradient(135deg,#0d2240 0%,#1B3A6B 50%,#1a4a8a 100%)',
+  'linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)',
 ]
 
 export default function HeroSlider() {
+  const { settings } = useSettings()
   const [current, setCurrent] = useState(0)
   const [imgErrors, setImgErrors] = useState({})
-  const [roleModalOpen, setRoleModalOpen] = useState(false)
+  const [roleOpen, setRoleOpen] = useState(false)
   const [comingSoonOpen, setComingSoonOpen] = useState(false)
 
+  const regOpen = settings.registrationOpen || false
+
+  // Dynamic titles: slide 0 uses heroTitle/heroSubtitle from Firestore
+  const slides = STATIC_SLIDES.map((s, i) => ({
+    ...s,
+    title:    i === 0 ? (settings.heroTitle    || 'Bharatiya Cricket League') : (i === 1 ? 'Your Stage Awaits'   : `${settings.prizeWinner || '₹15 Lakhs'} in Prizes`),
+    subtitle: i === 0 ? (settings.heroSubtitle || 'Season 1 Registrations Coming Soon') : (i === 1 ? 'Trials happening across India. Get scouted, get auctioned, get playing.' : `Winner takes ${settings.prizeWinner || '₹15 Lakhs'} · Runner Up wins ${settings.prizeRunnerUp || '₹7 Lakhs'}`),
+  }))
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length)
-    }, 5000)
-    return () => clearInterval(interval)
+    const t = setInterval(() => setCurrent(p => (p + 1) % slides.length), 5000)
+    return () => clearInterval(t)
   }, [])
 
   const slide = slides[current]
 
   return (
     <>
-    <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
-      {/* Background */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current}
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.9, ease: 'easeInOut' }}
-          className="absolute inset-0"
-          style={{ background: gradients[current] }}
-        >
-          {!imgErrors[current] && (
-            <img
-              src={slide.image}
-              alt=""
-              className="w-full h-full object-cover"
-              onError={() => setImgErrors(prev => ({ ...prev, [current]: true }))}
-            />
-          )}
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-bcl-blue/90 via-bcl-blue/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        </motion.div>
-      </AnimatePresence>
+      <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: 'easeInOut' }}
+            className="absolute inset-0"
+            style={{ background: GRADIENTS[current] }}
+          >
+            {!imgErrors[current] && (
+              <img src={slide.image} alt="" className="w-full h-full object-cover"
+                onError={() => setImgErrors(p => ({ ...p, [current]: true }))} />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-r from-bcl-blue/90 via-bcl-blue/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          </motion.div>
+        </AnimatePresence>
 
-      {/* Cricket pattern overlay */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
-      }} />
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px,white 1px,transparent 0)', backgroundSize: '40px 40px' }} />
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="max-w-2xl"
-            >
-              {/* Badge */}
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6"
-                style={{ backgroundColor: slide.accent, color: slide.accent === '#C9A227' ? '#1B3A6B' : 'white' }}
-              >
-                {slide.badge}
-              </motion.span>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4"
-                style={{ letterSpacing: '-1px' }}
-              >
-                {slide.title}
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-lg sm:text-xl text-white/80 mb-8 leading-relaxed"
-              >
-                {slide.subtitle}
-              </motion.p>
-
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-6 w-full">
+            <AnimatePresence mode="wait">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="flex flex-wrap gap-4"
+                key={current}
+                initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="max-w-2xl"
               >
-                <button
-                  onClick={() => {
-                    if (!REGISTRATION_OPEN) {
-                      setComingSoonOpen(true)
-                    } else {
-                      setRoleModalOpen(true)
-                    }
-                  }}
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}
+                  className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6"
                   style={{ backgroundColor: slide.accent, color: slide.accent === '#C9A227' ? '#1B3A6B' : 'white' }}
                 >
-                  🏏 {slide.cta}
-                </button>
-                <a
-                  href="#about-bcl"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base border-2 border-white/40 text-white hover:bg-white hover:text-bcl-blue transition-all duration-300"
+                  {slide.badge}
+                </motion.span>
+                <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+                  className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4" style={{ letterSpacing: '-1px' }}
                 >
-                  Learn More
-                </a>
+                  {slide.title}
+                </motion.h1>
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+                  className="text-lg sm:text-xl text-white/80 mb-8 leading-relaxed"
+                >
+                  {slide.subtitle}
+                </motion.p>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="flex flex-wrap gap-4">
+                  <button
+                    onClick={() => regOpen ? setRoleOpen(true) : setComingSoonOpen(true)}
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                    style={{ backgroundColor: slide.accent, color: slide.accent === '#C9A227' ? '#1B3A6B' : 'white' }}
+                  >
+                    🏏 {slide.cta}
+                  </button>
+                  <a href="#about-bcl" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base border-2 border-white/40 text-white hover:bg-white hover:text-bcl-blue transition-all duration-300">
+                    Learn More
+                  </a>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          </AnimatePresence>
+            </AnimatePresence>
+          </div>
         </div>
-      </div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`transition-all duration-300 rounded-full ${
-              i === current ? 'w-8 h-2.5 bg-bcl-gold' : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/70'
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
+        {/* Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+          {slides.map((_, i) => (
+            <button key={i} onClick={() => setCurrent(i)}
+              className={`transition-all duration-300 rounded-full ${i === current ? 'w-8 h-2.5 bg-bcl-gold' : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/70'}`}
+            />
+          ))}
+        </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-        className="absolute bottom-8 right-8 text-white/50 flex flex-col items-center gap-1 z-20"
-      >
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </motion.div>
-    </section>
+        {/* Scroll indicator */}
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}
+          className="absolute bottom-8 right-8 text-white/50 flex flex-col items-center gap-1 z-20"
+        >
+          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </motion.div>
+      </section>
 
-    {roleModalOpen && (
-      <RoleSelectModal onClose={() => setRoleModalOpen(false)} />
-    )}
-
-    {comingSoonOpen && (
-      <ComingSoonModal onClose={() => setComingSoonOpen(false)} />
-    )}
-  </>
+      {roleOpen       && <RoleSelectModal   onClose={() => setRoleOpen(false)} />}
+      {comingSoonOpen && <ComingSoonModal    onClose={() => setComingSoonOpen(false)} />}
+    </>
   )
 }
