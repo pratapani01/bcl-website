@@ -52,7 +52,7 @@ export default function AdminLayout({ children }) {
 
       {/* User pill */}
       <div className="mx-3 mt-4 px-3 py-2.5 rounded-xl bg-white/5 border border-white/10">
-        <p className="text-white/40 text-[10px] uppercase tracking-wider font-semibold">Signed in as</p>
+        <p className="text-white/40 text-[10px] uppercase tracking-wider font-semibold">Signed as</p>
         <p className="text-white/80 text-xs font-semibold truncate mt-0.5">{user?.email}</p>
       </div>
 
