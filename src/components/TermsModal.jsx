@@ -109,8 +109,7 @@ export default function TermsModal({ formUrl, roleLabel, onClose, infoOnly = fal
               <ul className="mt-3 flex flex-col gap-2">
                 {[
                   'You are not a national or board-level cricket player.',
-                  'All information provided during registration is accurate.',
-                  'You agree to abide by BCL\'s rules and code of conduct.',
+                  
                 ].map((point, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
                     <span className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 flex-shrink-0 mt-0.5">✓</span>
