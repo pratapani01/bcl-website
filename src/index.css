@@ -138,9 +138,9 @@ html {
 }
 
 .whatsapp-fab {
-  width: 58px;
-  height: 58px;
-  min-width: 58px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
   border-radius: 50%;
   background: #25D366;
   border: none;
@@ -169,9 +169,9 @@ html {
     right: 14px;
   }
   .whatsapp-fab {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
   }
   .whatsapp-join-bar {
     font-size: 10px;
