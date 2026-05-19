@@ -11,7 +11,7 @@ export default function WhatsAppFloat() {
   return (
     <div className="whatsapp-float-wrapper" aria-label="Join our WhatsApp group">
       <button onClick={handleClick} className="whatsapp-join-bar" aria-label="Join WhatsApp group for updates">
-        Join group for updates
+        Join Now
       </button>
       <button onClick={handleClick} className="whatsapp-fab" aria-label="Open WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="28" height="28" aria-hidden="true">
