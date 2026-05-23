@@ -88,9 +88,9 @@ function RoleCards() {
   const [comingSoonOpen, setComingSoon]   = useState(false)
 
   const roles = [
-    { icon: '🏏', title: 'Batsman',     price: '₹2,000', color: '#1B3A6B', features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],       formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
-    { icon: '⚾', title: 'Bowler',      price: '₹2,000', color: '#E63946', features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],           formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
-    { icon: '⭐', title: 'All Rounder', price: '₹3,000', color: '#C9A227', features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'], popular: true, formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA' },
+    { icon: '🏏', title: 'Batsman',     price: '₹1,500', color: '#1B3A6B', features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],       formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
+    { icon: '⚾', title: 'Bowler',      price: '₹1,500', color: '#E63946', features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],           formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
+    { icon: '⭐', title: 'All Rounder', price: '₹2,000', color: '#C9A227', features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'], popular: true, formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA' },
   ]
 
   return (
