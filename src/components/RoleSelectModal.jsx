@@ -9,9 +9,9 @@ export default function RoleSelectModal({ onClose }) {
 
   // Build roles from Firebase form links
   const roles = [
-    { icon: '🏏', label: 'Batsman',     price: '₹1,500', color: '#1B3A6B', bg: '#EEF2FF', formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
-    { icon: '⚾', label: 'Bowler',      price: '₹1,500', color: '#E63946', bg: '#FEF2F2', formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
-    { icon: '⭐', label: 'All Rounder', price: '₹2,500', color: '#C9A227', bg: '#FFF8E1', formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA', popular: true },
+    { icon: '🏏', label: 'Batsman',     price: '₹2,000', color: '#1B3A6B', bg: '#EEF2FF', formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
+    { icon: '⚾', label: 'Bowler',      price: '₹2,000', color: '#E63946', bg: '#FEF2F2', formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
+    { icon: '⭐', label: 'All Rounder', price: '₹3,000', color: '#C9A227', bg: '#FFF8E1', formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA', popular: true },
   ]
 
   useEffect(() => {
