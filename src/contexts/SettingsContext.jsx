@@ -30,6 +30,29 @@ export const DEFAULT_SETTINGS = {
   showTeamsSection:   true,
 }
 
+// Text values saved in Firestore before the women-only rebrand still say
+// "BCL" / "Bharatiya Cricket League". Rewrite them on the fly so the site
+// shows the new name without waiting for someone to re-save every field in
+// the admin panel. New values saved from the admin panel are untouched.
+const TEXT_KEYS = ['heroTitle', 'heroSubtitle', 'announcementText', 'popupText', 'comingSoonText', 'auctionText']
+
+function modernize(data) {
+  const out = { ...data }
+  for (const key of TEXT_KEYS) {
+    const v = out[key]
+    if (typeof v !== 'string') continue
+    if (key === 'heroSubtitle' && v.trim() === 'Season 1 Registrations Coming Soon') {
+      out[key] = DEFAULT_SETTINGS.heroSubtitle
+      continue
+    }
+    out[key] = v
+      .replace(/Bharatiya Cricket League/g, 'Bharatiya Women Cricket League')
+      .replace(/\bBCL\b/g, 'BWCL')
+      .replace(/grassroots cricket league/gi, "grassroots women's cricket league")
+  }
+  return out
+}
+
 const SettingsContext = createContext({ settings: DEFAULT_SETTINGS, loading: true })
 
 export function SettingsProvider({ children }) {
@@ -45,7 +68,7 @@ export function SettingsProvider({ children }) {
     })
 
     const unsub = onSnapshot(ref, (snap) => {
-      if (snap.exists()) setSettings({ ...DEFAULT_SETTINGS, ...snap.data() })
+      if (snap.exists()) setSettings(modernize({ ...DEFAULT_SETTINGS, ...snap.data() }))
       setLoading(false)
     })
     return unsub
