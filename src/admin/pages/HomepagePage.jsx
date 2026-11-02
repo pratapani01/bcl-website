@@ -63,13 +63,13 @@ export default function HomepagePage() {
               label="Hero Title"
               value={heroTitle}
               onChange={e => setHeroTitle(e.target.value)}
-              placeholder="Bharatiya Cricket League"
+              placeholder="Bharatiya Women Cricket League"
             />
             <Field
               label="Hero Subtitle"
               value={heroSubtitle}
               onChange={e => setHeroSubtitle(e.target.value)}
-              placeholder="Season 1 Registrations Coming Soon"
+              placeholder="Built for women cricketers. Season 1 registrations coming soon."
             />
           </div>
         </Card>

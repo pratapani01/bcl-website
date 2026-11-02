@@ -1,6 +1,6 @@
 // TermsModal.jsx
 // ✅ CHANGE 3: Terms & Conditions popup shown before redirecting to any Google Form.
-// Usage: <TermsModal formUrl="..." roleLabel="Batsman" onClose={() => setOpen(false)} />
+// Usage: <TermsModal formUrl="..." roleLabel="Batter" onClose={() => setOpen(false)} />
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -93,6 +93,9 @@ export default function TermsModal({ formUrl, roleLabel, onClose, infoOnly = fal
                 </p>
               </div>
               <p className="text-amber-800 text-sm leading-relaxed">
+                <strong>Women Only:</strong> Only <strong>women cricketers</strong> are allowed to participate in this league.
+              </p>
+              <p className="text-amber-800 text-sm leading-relaxed">
                 <strong>Age Eligibility:</strong> Only users aged between <strong>18 and 45 years</strong> are allowed to use this platform.
               </p>
               <p className="text-amber-800 text-sm leading-relaxed">
@@ -108,6 +111,7 @@ export default function TermsModal({ formUrl, roleLabel, onClose, infoOnly = fal
               </p>
               <ul className="mt-3 flex flex-col gap-2">
                 {[
+                  'You are a woman cricketer.',
                   'You are not a national or board-level cricket player.',
                   
                 ].map((point, i) => (
@@ -146,7 +150,7 @@ export default function TermsModal({ formUrl, roleLabel, onClose, infoOnly = fal
                 <span className="text-sm text-gray-700 leading-snug">
                   I agree to the{' '}
                   <strong className="text-bcl-blue">terms and conditions</strong>{' '}
-                  and confirm I am eligible to participate in BCL Season 1.
+                  and confirm I am eligible to participate in BWCL Season 1.
                 </span>
               </label>
             )}

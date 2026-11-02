@@ -19,7 +19,7 @@ export default function AccessDenied() {
           The account <strong className="text-gray-700">{user?.email}</strong> is not authorised to access this panel.
         </p>
         <p className="text-gray-400 text-xs mb-8">
-          Only designated BCL admin accounts can log in here.
+          Only designated BWCL admin accounts can log in here.
         </p>
         <div className="flex flex-col gap-3">
           <button
@@ -29,7 +29,7 @@ export default function AccessDenied() {
             Sign out & try another account
           </button>
           <a href="/" className="text-xs text-gray-400 hover:text-bcl-blue transition-colors">
-            ← Back to BCL website
+            ← Back to BWCL website
           </a>
         </div>
       </div>

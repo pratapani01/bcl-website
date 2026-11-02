@@ -15,7 +15,7 @@ export default function Contact() {
     e.preventDefault()
     if (!form.name || !form.phone) return
     const text = encodeURIComponent(
-      `Hello BCL Team!\n\nName: ${form.name}\nPhone: ${form.phone}\n\nMessage: ${form.message || 'I am interested in BCL Season 1 registration.'}`
+      `Hello BWCL Team!\n\nName: ${form.name}\nPhone: ${form.phone}\n\nMessage: ${form.message || 'I am interested in BWCL Season 1 registration.'}`
     )
     window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, '_blank')
     setSubmitted(true)
@@ -78,7 +78,7 @@ export default function Contact() {
               Get In Touch
             </span>
             <h1 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ letterSpacing: '-1px' }}>
-              Contact BCL
+              Contact BWCL
             </h1>
             <p className="text-white/70 text-lg max-w-xl mx-auto">
               Questions about registration, trials, or partnerships? We're here to help. Reach out anytime.
@@ -106,7 +106,7 @@ export default function Contact() {
                 </span>
                 <h2 className="text-2xl font-black text-bcl-blue mb-3">We'd Love to Hear from You</h2>
                 <p className="text-gray-500 leading-relaxed">
-                  Whether you're a player looking to register, a city looking to host trials, or a brand interested in sponsorship — the BCL team is ready to connect.
+                  Whether you're a player looking to register, a city looking to host trials, or a brand interested in sponsorship — the BWCL team is ready to connect.
                 </p>
               </div>
 
@@ -153,7 +153,7 @@ export default function Contact() {
 
               {/* Social */}
               {/* <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="text-sm font-bold text-bcl-blue mb-4 uppercase tracking-wider">Follow BCL</h3>
+                <h3 className="text-sm font-bold text-bcl-blue mb-4 uppercase tracking-wider">Follow BWCL</h3>
                 <div className="flex gap-4">
                   {[
                     { icon: '📸', label: 'Instagram', href: 'https://instagram.com', color: '#E1306C' },
@@ -254,7 +254,7 @@ export default function Contact() {
                         name="message"
                         value={form.message}
                         onChange={handleChange}
-                        placeholder="I'd like to know more about BCL Season 1 registration..."
+                        placeholder="I'd like to know more about BWCL Season 1 registration..."
                         rows={4}
                         className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-bcl-blue focus:outline-none transition-colors text-sm font-medium placeholder:text-gray-300 resize-none"
                       />
@@ -287,10 +287,11 @@ export default function Contact() {
           <h2 className="text-2xl font-black text-bcl-blue text-center mb-10">Common Questions</h2>
           <div className="flex flex-col gap-4">
             {[
-              { q: 'How do I register for BCL Season 1?', a: 'Click the "Register Now" button on the homepage, fill out the Google Form with your details, and pay the registration fee based on your role.' },
-              { q: 'What is the registration fee?', a: 'Batsmen and Bowlers: ₹2,000. All Rounders: ₹3,000. This covers your trial entry and player profile creation.' },
-              { q: 'Which cities have BCL trials?', a: 'BCL is conducting trials in 20+ cities including Delhi, Mumbai, Bengaluru, Chennai, Kolkata, Hyderabad, Lucknow, Jaipur, Pune, Ahmedabad, and more.' },
-              { q: 'What is the auction base price?', a: 'Selected players enter the BCL Auction with a minimum base price of ₹51,000. Franchise teams bid for your services.' },
+              { q: 'Who can register?', a: 'BWCL is a women-only league. Women cricketers aged 18 to 45 years can register. Players who have played official Board-level or National-level cricket are not eligible.' },
+              { q: 'How do I register for BWCL Season 1?', a: 'Click the "Register Now" button on the homepage, fill out the Google Form with your details, and pay the registration fee based on your role.' },
+              { q: 'What is the registration fee?', a: 'Batters and Bowlers: ₹2,000. All Rounders: ₹3,000. This covers your trial entry and player profile creation.' },
+              { q: 'Which cities have BWCL trials?', a: 'BWCL is conducting trials in 20+ cities including Delhi, Mumbai, Bengaluru, Chennai, Kolkata, Hyderabad, Lucknow, Jaipur, Pune, Ahmedabad, and more.' },
+              { q: 'What is the auction base price?', a: 'Selected players enter the BWCL Auction with a minimum base price of ₹51,000. Franchise teams bid for your services.' },
             ].map((faq, i) => (
               <motion.div
                 key={i}

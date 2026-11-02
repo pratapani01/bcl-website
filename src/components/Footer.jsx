@@ -28,21 +28,21 @@ export default function Footer() {
               <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                 <img
                   src="/assets/logo.png"
-                  alt="BCL"
+                  alt="BWCL"
                   className="w-10 h-10 object-cover rounded-full"
                   onError={(e) => {
                     e.target.style.display = 'none'
-                    e.target.parentNode.innerHTML = `<span class="text-white font-black text-base">BCL</span>`
+                    e.target.parentNode.innerHTML = `<span class="text-white font-black text-xs">BWCL</span>`
                   }}
                 />
               </div>
               <div>
-                <p className="font-black text-sm tracking-widest uppercase">Bharatiya</p>
+                <p className="font-black text-sm tracking-widest uppercase">Bharatiya Women</p>
                 <p className="text-bcl-gold font-black text-sm tracking-widest uppercase">Cricket League</p>
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Where Passion Meets Opportunity. India's premier grassroots cricket league bridging talent and top-level competition.
+              Where Passion Meets Opportunity. India's premier grassroots women's cricket league, bridging talent and top-level competition for women cricketers.
             </p>
             {/* Social Icons */}
             <div className="flex gap-3 mt-2">
@@ -76,7 +76,7 @@ export default function Footer() {
               {[
                 { to: '/', label: 'Home' },
                 { to: '/teams', label: 'Teams' },
-                { to: '/about', label: 'About BCL' },
+                { to: '/about', label: 'About BWCL' },
                 { to: '/contact', label: 'Contact Us' },
               ].map((l) => (
                 <li key={l.to}>
@@ -125,7 +125,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
-          <p>© {year} All Rights Reserved by Team BCL</p>
+          <p>© {year} All Rights Reserved by Team BWCL</p>
           <p>
             Designed by{' '}
             <a

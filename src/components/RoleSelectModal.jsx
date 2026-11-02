@@ -9,7 +9,7 @@ export default function RoleSelectModal({ onClose }) {
 
   // Build roles from Firebase form links
   const roles = [
-    { icon: '🏏', label: 'Batsman',     price: '₹2,000', color: '#1B3A6B', bg: '#EEF2FF', formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
+    { icon: '🏏', label: 'Batter',      price: '₹2,000', color: '#1B3A6B', bg: '#EEF2FF', formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
     { icon: '⚾', label: 'Bowler',      price: '₹2,000', color: '#E63946', bg: '#FEF2F2', formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
     { icon: '⭐', label: 'All Rounder', price: '₹3,000', color: '#C9A227', bg: '#FFF8E1', formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA', popular: true },
   ]
@@ -48,7 +48,7 @@ export default function RoleSelectModal({ onClose }) {
             </div>
             <div className="px-6 py-4 flex items-center justify-between border-b border-gray-100">
               <div>
-                <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest">BCL Season 1</p>
+                <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest">BWCL Season 1</p>
                 <h2 className="text-bcl-blue font-black text-lg mt-0.5">Choose Your Role</h2>
               </div>
               <button onClick={onClose} aria-label="Close"

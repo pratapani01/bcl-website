@@ -44,7 +44,7 @@ export default function PopupPage() {
               label="Announcement Text"
               value={announcement}
               onChange={e => setAnnouncement(e.target.value)}
-              placeholder="BCL Season 1 – India's biggest grassroots cricket league is here!"
+              placeholder="BWCL Season 1 – India's biggest grassroots women's cricket league is here!"
               rows={2}
             />
           </div>
@@ -57,7 +57,7 @@ export default function PopupPage() {
               label="Popup Description Text"
               value={popup}
               onChange={e => setPopup(e.target.value)}
-              placeholder="Welcome to BCL! Registrations opening soon. Stay tuned for updates."
+              placeholder="Welcome to BWCL! Registrations opening soon. Stay tuned for updates."
               rows={3}
             />
           </div>
@@ -70,7 +70,7 @@ export default function PopupPage() {
               label="Coming Soon Message"
               value={comingSoon}
               onChange={e => setComingSoon(e.target.value)}
-              placeholder="BCL T20 registrations will open shortly. Stay connected and don't miss your chance to play."
+              placeholder="BWCL T20 registrations will open shortly. Stay connected and don't miss your chance to play."
               rows={3}
             />
           </div>
@@ -82,8 +82,8 @@ export default function PopupPage() {
           <div className="p-5">
             <div className="max-w-xs mx-auto bg-white rounded-2xl shadow-xl border overflow-hidden">
               <div className="bg-gradient-to-r from-bcl-blue to-blue-800 px-5 py-4">
-                <p className="text-bcl-gold text-[10px] font-bold uppercase tracking-widest mb-1">Bharatiya Cricket League – Season 1</p>
-                <h3 className="text-white font-black text-base">Welcome to BCL! 🏏🔥</h3>
+                <p className="text-bcl-gold text-[10px] font-bold uppercase tracking-widest mb-1">Bharatiya Women Cricket League – Season 1</p>
+                <h3 className="text-white font-black text-base">Welcome to BWCL! 🏏🔥</h3>
               </div>
               <div className="px-5 py-4">
                 <p className="text-gray-600 text-xs leading-relaxed">{popup || 'Popup text will appear here…'}</p>

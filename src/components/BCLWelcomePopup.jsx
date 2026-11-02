@@ -62,8 +62,8 @@ export default function BCLWelcomePopup() {
               <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-white/5" />
               <div className="relative flex items-start justify-between gap-3">
                 <div>
-                  <p className="text-bcl-gold text-xs font-bold uppercase tracking-widest mb-1">Bharatiya Cricket League – Season 1</p>
-                  <h2 id="bcl-popup-title" className="text-white font-black text-xl leading-tight">Welcome to BCL! 🏏🔥</h2>
+                  <p className="text-bcl-gold text-xs font-bold uppercase tracking-widest mb-1">Bharatiya Women Cricket League – Season 1</p>
+                  <h2 id="bcl-popup-title" className="text-white font-black text-xl leading-tight">Welcome to BWCL! 🏏🔥</h2>
                 </div>
                 <button onClick={close} aria-label="Close popup" className="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-white text-lg leading-none transition-colors">✕</button>
               </div>
@@ -76,8 +76,8 @@ export default function BCLWelcomePopup() {
               )}
               <ul className="flex flex-col gap-2.5">
                 {[
-                  { icon: '🎂', text: 'Age Eligibility: Only participants between 18 to 45 years are allowed' },
-                  { icon: '🏏', text: 'Open Registration: Players from all backgrounds can participate' },
+                  { icon: '🎂', text: 'Women-Only League: Open to women cricketers aged 18 to 45 years' },
+                  { icon: '🏏', text: 'Open Registration: Women players from all backgrounds can participate' },
                   { icon: '📋', text: 'Selection Process: Registration → Trials → Auction → Team Finalisation' },
                   { icon: '💰', text: 'Auction Base Price starts from ₹51,000 for selected players' },
                   { icon: '🏟️', text: 'Matches will be played on professional grounds' },

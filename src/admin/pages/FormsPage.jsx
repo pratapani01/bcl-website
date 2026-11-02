@@ -32,10 +32,10 @@ export default function FormsPage() {
 
   const forms = [
     {
-      icon: '🏏', label: 'Batsman Form Link',      color: 'border-bcl-blue/30 bg-blue-50/50',
+      icon: '🏏', label: 'Batter Form Link',      color: 'border-bcl-blue/30 bg-blue-50/50',
       value: batsman,    onChange: e => setBatsman(e.target.value),
       placeholder: 'https://forms.gle/...',
-      hint: 'Opened when a user clicks Register → Batsman',
+      hint: 'Opened when a user clicks Register → Batter',
     },
     {
       icon: '⚾', label: 'Bowler Form Link',        color: 'border-red-200 bg-red-50/50',

@@ -1,6 +1,6 @@
-# 🏏 Bharatiya Cricket League (BCL) – Official Website
+# 🏏 Bharatiya Women Cricket League (BWCL) – Official Website
 
-A premium, multi-page React website for BCL Season 1.
+A premium, multi-page React website for Bharatiya Women Cricket League (BWCL) Season 1 — a women-only cricket league.
 
 ---
 
@@ -37,7 +37,7 @@ src/
 │   ├── Home.jsx            # Full homepage with all sections
 │   ├── Teams.jsx           # All teams grid
 │   ├── TeamDetail.jsx      # Dynamic team detail page
-│   ├── About.jsx           # About BCL page
+│   ├── About.jsx           # About BWCL page
 │   └── Contact.jsx         # Contact + WhatsApp form
 ├── data/
 │   └── teams.js            # All 10 team data
@@ -53,7 +53,7 @@ Place images in the `public/assets/` folder (create it if it doesn't exist):
 ```
 public/
 └── assets/
-    ├── logo.png             # BCL Logo
+    ├── logo.png             # BWCL Logo
     ├── img-hero1.jpg        # Hero slide 1
     ├── img-hero2.jpg        # Hero slide 2
     ├── img1.jpg – img8.jpg  # Gallery images
@@ -100,7 +100,7 @@ Edit `src/data/teams.js` to update team names, cities, descriptions, and colors.
 | `/` | Home |
 | `/teams` | All Teams |
 | `/team/:teamName` | Team Detail |
-| `/about` | About BCL |
+| `/about` | About BWCL |
 | `/contact` | Contact |
 
 ---
@@ -108,8 +108,8 @@ Edit `src/data/teams.js` to update team names, cities, descriptions, and colors.
 ## 🎨 Design
 
 - **Font**: Poppins (Google Fonts)
-- **Primary**: `#1B3A6B` (BCL Blue)
-- **Accent**: `#C9A227` (BCL Gold)
+- **Primary**: `#1B3A6B` (BWCL Blue)
+- **Accent**: `#C9A227` (BWCL Gold)
 - **Red**: `#E63946`
 - **Theme**: White, clean, professional sports
 
@@ -122,4 +122,4 @@ Instagram: [@animesh_pratap_singh](https://instagram.com/animesh_pratap_singh)
 
 ---
 
-© All Rights Reserved by Team BCL
+© All Rights Reserved by Team BWCL

@@ -13,28 +13,28 @@ const values = [
   {
     icon: '🎯',
     title: 'Our Vision',
-    desc: 'To become India\'s most respected grassroots cricket league — a platform that bridges the gap between local talent and professional cricket. We envision a future where every passionate cricketer gets a fair shot at their dream.',
+    desc: 'To become India\'s most respected grassroots women\'s cricket league — a platform that bridges the gap between local women\'s talent and professional cricket. We envision a future where every passionate woman cricketer gets a fair shot at her dream.',
     color: '#1B3A6B',
   },
   {
     icon: '🚀',
     title: 'Our Mission',
-    desc: 'To discover, develop, and showcase India\'s raw cricket talent through a structured, professional tournament. BCL provides real trials, real auctions, real franchises — and real opportunities.',
+    desc: 'To discover, develop, and showcase the raw talent of India\'s women cricketers through a structured, professional tournament. BWCL provides real trials, real auctions, real franchises — and real opportunities.',
     color: '#E63946',
   },
   {
     icon: '💡',
     title: 'What Makes Us Different',
-    desc: 'Unlike other local tournaments, BCL operates like a professional league — with franchise teams, a player auction system, live broadcasting, national stadium venues, and direct scout exposure. We are not just a tournament; we are a career launchpad.',
+    desc: 'Unlike other local tournaments, BWCL is built exclusively for women cricketers and operates like a professional league — with franchise teams, a player auction system, live broadcasting, national stadium venues, and direct scout exposure. We are not just a tournament; we are a career launchpad.',
     color: '#C9A227',
   },
 ]
 
 const milestones = [
-  { year: '2024', event: 'BCL Founded', desc: 'Bharatiya Cricket League established with a vision to transform grassroots cricket.' },
+  { year: '2024', event: 'BWCL Founded', desc: 'Bharatiya Women Cricket League established with a vision to transform women\'s grassroots cricket.' },
   { year: 'Early 2025', event: 'City Trials Begin', desc: 'Trials kick off across 20+ cities. Thousands of players attend.' },
-  { year: 'Mid 2025', event: 'BCL Auction', desc: 'Selected players enter the franchise auction. Base price: ₹51,000.' },
-  { year: 'Late 2025', event: 'Season 1 Begins', desc: 'BCL Season 1 launches with 10 franchises playing across national stadiums.' },
+  { year: 'Mid 2025', event: 'BWCL Auction', desc: 'Selected players enter the franchise auction. Base price: ₹51,000.' },
+  { year: 'Late 2025', event: 'Season 1 Begins', desc: 'BWCL Season 1 launches with 10 franchises playing across national stadiums.' },
 ]
 
 export default function About() {
@@ -57,10 +57,10 @@ export default function About() {
               Our Story
             </span>
             <h1 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ letterSpacing: '-1px' }}>
-              About BCL
+              About BWCL
             </h1>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
-              Bharatiya Cricket League was born from a simple belief — India's cricket talent extends far beyond the stadiums on TV. Every gully, every maidan, every open ground hides a future champion.
+              Bharatiya Women Cricket League was born from a simple belief — India's women's cricket talent extends far beyond the stadiums on TV. Every gully, every maidan, every open ground hides a future champion — and she deserves a stage.
             </p>
           </motion.div>
         </div>
@@ -88,7 +88,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* About BCL */}
+      {/* About BWCL */}
       <section className="py-20 bg-bcl-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -102,17 +102,17 @@ export default function About() {
                 Who We Are
               </span>
               <h2 className="text-3xl font-black text-bcl-blue mb-6 leading-tight" style={{ letterSpacing: '-0.5px' }}>
-                India's Premier Grassroots Cricket League
+                India's Premier Grassroots Women's Cricket League
               </h2>
               <div className="flex flex-col gap-4 text-gray-600 leading-relaxed">
                 <p>
-                  The Bharatiya Cricket League (BCL) is a professionally organized franchise-based cricket league designed to give India's grassroots cricketers a legitimate pathway to professional play.
+                  The Bharatiya Women Cricket League (BWCL) is a professionally organized, franchise-based league designed exclusively for women, giving India's grassroots women cricketers a legitimate pathway to professional play.
                 </p>
                 <p>
-                  From open trials in 20+ cities to a televised auction and national stadium matches — BCL mirrors the IPL structure at the grassroots level, giving players the full experience of professional cricket.
+                  From open trials in 20+ cities to a televised auction and national stadium matches — BWCL mirrors the franchise structure of leagues like the WPL at the grassroots level, giving women players the full experience of professional cricket.
                 </p>
                 <p>
-                  With a prize pool of ₹22+ Lakhs and player auction base prices of ₹51,000, BCL is not just a tournament — it is a career-defining opportunity for thousands of cricketers across India.
+                  With a prize pool of ₹22+ Lakhs and player auction base prices of ₹51,000, BWCL is not just a tournament — it is a career-defining opportunity for thousands of women cricketers across India.
                 </p>
               </div>
             </motion.div>
@@ -128,9 +128,9 @@ export default function About() {
               <div className="bcl-gradient rounded-3xl p-10 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-white/10 -translate-y-1/2 translate-x-1/2" />
                 <div className="text-7xl mb-6">🏏</div>
-                <h3 className="text-2xl font-black mb-3">BCL Season 1</h3>
+                <h3 className="text-2xl font-black mb-3">BWCL Season 1</h3>
                 <p className="text-white/70 leading-relaxed mb-6">
-                  The inaugural season of Bharatiya Cricket League promises to be a landmark moment in Indian cricket history.
+                  The inaugural season of Bharatiya Women Cricket League promises to be a landmark moment in Indian women's cricket.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
@@ -198,7 +198,7 @@ export default function About() {
             <span className="inline-block text-xs font-bold tracking-widest uppercase text-bcl-gold bg-bcl-gold/10 px-4 py-1.5 rounded-full mb-4">
               Journey
             </span>
-            <h2 className="section-title">BCL Milestones</h2>
+            <h2 className="section-title">BWCL Milestones</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -238,10 +238,10 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-              Be Part of the BCL Story
+              Be Part of the BWCL Story
             </h2>
             <p className="text-white/70 mb-8">
-              Season 1 is just the beginning. Join now and become a founding player of the Bharatiya Cricket League.
+              Season 1 is just the beginning. Join now and become a founding player of the Bharatiya Women Cricket League.
             </p>
             <button
               onClick={() => setRoleModalOpen(true)}

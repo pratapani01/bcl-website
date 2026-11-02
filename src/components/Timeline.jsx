@@ -20,7 +20,7 @@ const steps = [
     icon: '💰',
     number: '03',
     title: 'Auction',
-    desc: 'Selected players enter the BCL Auction with a base price of ₹51,000.',
+    desc: 'Selected players enter the BWCL Auction with a base price of ₹51,000.',
     color: '#C9A227',
     highlight: true,
   },
@@ -34,8 +34,8 @@ const steps = [
   {
     icon: '🏆',
     number: '05',
-    title: 'Play in BCL S1',
-    desc: 'Take the field in BCL Season 1. Play in national stadiums under live coverage.',
+    title: 'Play in BWCL S1',
+    desc: 'Take the field in BWCL Season 1. Play in national stadiums under live coverage.',
     color: '#E63946',
   },
 ]
@@ -58,7 +58,7 @@ export default function Timeline() {
           </span>
           <h2 className="section-title">Registration Process</h2>
           <p className="section-subtitle">
-            Your journey from registration to playing in BCL Season 1 — five simple steps.
+            Your journey from registration to playing in BWCL Season 1 — five simple steps.
           </p>
         </motion.div>
 

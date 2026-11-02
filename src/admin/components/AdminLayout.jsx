@@ -36,13 +36,13 @@ export default function AdminLayout({ children }) {
       <div className="px-5 py-6 border-b border-white/10">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center">
-            <img src="/assets/logo.png" alt="BCL"
+            <img src="/assets/logo.png" alt="BWCL"
               className="w-full h-full object-cover"
-              onError={e => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<span class="text-white font-black text-xs">BCL</span>' }}
+              onError={e => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<span class="text-white font-black text-xs">BWCL</span>' }}
             />
           </div>
           <div className="min-w-0">
-            <p className="text-white font-black text-sm leading-none truncate">BCL Admin</p>
+            <p className="text-white font-black text-sm leading-none truncate">BWCL Admin</p>
             <p className="text-white/40 text-[11px] mt-0.5">
               {isAdmin ? '👑 Owner Admin' : '👔 Manager'}
             </p>
@@ -141,7 +141,7 @@ export default function AdminLayout({ children }) {
               <p className="text-bcl-blue font-black text-sm">
                 {isAdmin ? '👑 Owner Admin Panel' : '👔 Manager Panel'}
               </p>
-              <p className="text-gray-400 text-[11px]">Bharatiya Cricket League</p>
+              <p className="text-gray-400 text-[11px]">Bharatiya Women Cricket League</p>
             </div>
           </div>
           <span className={`text-[11px] font-bold px-3 py-1 rounded-full ${isAdmin ? 'bg-bcl-gold/20 text-bcl-blue' : 'bg-blue-100 text-blue-700'}`}>

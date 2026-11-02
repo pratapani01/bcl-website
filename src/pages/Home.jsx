@@ -29,7 +29,7 @@ function PrizeSection() {
         <Section>
           <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-gold bg-bcl-gold/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">Prizes & Rewards</span>
           <h2 className="text-3xl md:text-4xl font-black text-white text-center mb-4">Massive Prize Pool</h2>
-          <p className="text-white/60 text-center max-w-xl mx-auto mb-12">The biggest prize pool in grassroots cricket. Compete for glory and life-changing rewards.</p>
+          <p className="text-white/60 text-center max-w-xl mx-auto mb-12">A prize pool built for women cricketers. Compete for glory and life-changing rewards.</p>
         </Section>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 flex flex-col items-center text-center">
@@ -88,7 +88,7 @@ function RoleCards() {
   const [comingSoonOpen, setComingSoon]   = useState(false)
 
   const roles = [
-    { icon: '🏏', title: 'Batsman',     price: '₹2,000', color: '#1B3A6B', features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],       formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
+    { icon: '🏏', title: 'Batter',      price: '₹2,000', color: '#1B3A6B', features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],       formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
     { icon: '⚾', title: 'Bowler',      price: '₹2,000', color: '#E63946', features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],           formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
     { icon: '⭐', title: 'All Rounder', price: '₹3,000', color: '#C9A227', features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'], popular: true, formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA' },
   ]
@@ -141,7 +141,7 @@ function WhyJoin() {
   const perks = [
     { icon: '🏟️', title: 'National & International Stadiums', desc: 'Play on iconic grounds across India.' },
     { icon: '📺', title: 'Live Media Broadcasting',            desc: 'Every match streamed live.' },
-    { icon: '🎖️', title: 'Professional Tournament Experience', desc: 'Full lifecycle of professional cricket.' },
+    { icon: '🎖️', title: 'Professional Tournament Experience', desc: "Full lifecycle of professional women's cricket." },
     { icon: '💰', title: 'High Prize Pool',                    desc: '₹22+ Lakhs in prizes.' },
     { icon: '🔭', title: 'Scout Exposure',                     desc: 'Top scouts watching every trial and match.' },
     { icon: '🤝', title: 'Team Franchise System',              desc: 'Get auctioned and represent your city.' },
@@ -151,7 +151,7 @@ function WhyJoin() {
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-blue bg-bcl-blue/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">Benefits</span>
-          <h2 className="section-title">Why Join BCL?</h2>
+          <h2 className="section-title">Why Join BWCL?</h2>
           <p className="section-subtitle">More than a tournament — a launchpad for your cricket career.</p>
         </Section>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -177,7 +177,7 @@ function TeamsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-blue bg-bcl-blue/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">Franchises</span>
-          <h2 className="section-title">BCL Teams</h2>
+          <h2 className="section-title">BWCL Teams</h2>
           <p className="section-subtitle">10 powerful franchises. 10 cities. One champion.</p>
         </Section>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -198,7 +198,7 @@ function Tagline() {
         </motion.p>
         <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
           className="text-gray-400 mt-4 text-lg">
-          India's most exciting grassroots cricket league — BCL Season 1
+          India's most exciting grassroots women's cricket league — BWCL Season 1
         </motion.p>
       </div>
     </section>
@@ -218,7 +218,7 @@ function CtaSection() {
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="inline-block bg-bcl-gold text-bcl-blue text-xs font-black px-5 py-1.5 rounded-full uppercase tracking-widest mb-6">⚡ Limited Slots</span>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{ letterSpacing: '-1px' }}>Limited Slots Available</h2>
-          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Don't miss your chance to play in BCL Season 1. Registrations are filling up fast — secure your spot today.</p>
+          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Don't miss your chance to play in BWCL Season 1. Registrations are filling up fast — secure your spot today.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={() => REGISTRATION_OPEN ? setOpen(true) : setComingSoon(true)}
               className="inline-flex items-center justify-center gap-2 bg-bcl-gold text-bcl-blue px-10 py-4 rounded-full font-black text-base hover:bg-white transition-all duration-300 hover:scale-105 shadow-xl shadow-black/20">

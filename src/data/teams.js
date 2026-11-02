@@ -10,7 +10,7 @@ export const teamsData = [
     logo: '/assets/team1.png',
     tagline: "Rule The Game",
     about:
-      "Delhi Dominators represent the spirit of India’s capital — aggressive, dynamic, and relentless. Built from top talent across NCR, they aim to dominate BCL Season 1.",
+      "Delhi Dominators represent the spirit of India’s capital — aggressive, dynamic, and relentless. Built from top women cricketers across NCR, they aim to dominate BWCL Season 1.",
     colors: ['#E63946', '#1B3A6B'],
     // captain: 'Arjun Sharma',
     // strength: 'Power Batting',
@@ -24,7 +24,7 @@ export const teamsData = [
     logo: '/assets/team2.png',
     tagline: 'Fearless By Nature',
     about:
-      'Mumbai Mavericks carry the legacy of India’s cricket capital. Known for explosive batting and smart bowling strategies.',
+      'Mumbai Mavericks carry the legacy of India’s cricket capital. A women’s franchise known for explosive batting and smart bowling strategies.',
     colors: ['#1B3A6B', '#C9A227'],
     // captain: 'Rohan Patil',
     // strength: 'All-Round Balance',
@@ -38,7 +38,7 @@ export const teamsData = [
     logo: '/assets/team3.png',
     tagline: 'Explode Every Over',
     about:
-      'Bengaluru Blasters combine data-driven strategy with raw cricketing talent. Discipline meets power here.',
+      'Bengaluru Blasters combine data-driven strategy with raw cricketing talent. A women’s franchise where discipline meets power.',
     colors: ['#C9A227', '#1B3A6B'],
     // captain: 'Kiran Reddy',
     // strength: 'Strategic Play',
@@ -52,7 +52,7 @@ export const teamsData = [
     logo: '/assets/team4.png',
     tagline: 'Charge Till Victory',
     about:
-      'Chennai Chargers are known for resilience and experience. A balanced squad with deadly spin attack.',
+      'Chennai Chargers are known for resilience and experience. A balanced women’s squad with a deadly spin attack.',
     colors: ['#E07340', '#1B3A6B'],
     // captain: 'Suresh Murugan',
     // strength: 'Spin Bowling',
@@ -66,7 +66,7 @@ export const teamsData = [
     logo: '/assets/team5.png',
     tagline: 'Fight With Honor',
     about:
-      'Kolkata Knights bring heritage and passion. Masters of chasing big targets under pressure.',
+      'Kolkata Knights bring heritage and passion. A women’s squad, masters of chasing big targets under pressure.',
     colors: ['#9C27B0', '#C9A227'],
     // captain: 'Debashish Bose',
     // strength: 'Chase Masters',
@@ -80,7 +80,7 @@ export const teamsData = [
     logo: '/assets/team6.png',
     tagline: 'Storm The Field',
     about:
-      'Hyderabad Hurricanes dominate with pace and aggression. Fast, fearless, and always attacking.',
+      'Hyderabad Hurricanes dominate with pace and aggression. A women’s squad that is fast, fearless, and always attacking.',
     colors: ['#FF5722', '#1B3A6B'],
     // captain: 'Mohammed Farhan',
     // strength: 'Pace Attack',
@@ -94,7 +94,7 @@ export const teamsData = [
     logo: '/assets/team7.png',
     tagline: 'The Pink City Warriors',
     about:
-      'Rajasthan Royals Elite combine royal heritage with modern cricketing excellence.',
+      'Rajasthan Royals Elite combine royal heritage with modern women’s cricketing excellence.',
     colors: ['#E63946', '#C9A227'],
     // captain: 'Vikram Singh Rathore',
     // strength: 'Batting Depth',
@@ -108,7 +108,7 @@ export const teamsData = [
     logo: '/assets/team8.png',
     tagline: 'Legacy Never Dies',
     about:
-      'Lucknow Legends roar with pride and passion, representing the heartland of cricket.',
+      'Lucknow Legends roar with pride and passion, representing the heartland of women’s cricket.',
     colors: ['#4CAF50', '#1B3A6B'],
     // captain: 'Aditya Verma',
     // strength: 'Experienced Squad',
@@ -122,7 +122,7 @@ export const teamsData = [
     logo: '/assets/team9.png',
     tagline: 'Unleash The Roar',
     about:
-      'Punjab Panthers are agile and aggressive. A perfect mix of youth and experience.',
+      'Punjab Panthers are agile and aggressive. A women’s squad with a perfect mix of youth and experience.',
     colors: ['#00BCD4', '#1B3A6B'],
     // captain: 'Gurpreet Sandhu',
     // strength: 'Youth & Energy',
@@ -136,7 +136,7 @@ export const teamsData = [
     logo: '/assets/team10.png',
     tagline: 'Battle For Glory',
     about:
-      'Gujarat Gladiators play fearless cricket with explosive batting power.',
+      'Gujarat Gladiators play fearless women’s cricket with explosive batting power.',
     colors: ['#607D8B', '#C9A227'],
     // captain: 'Nirav Patel',
     // strength: 'Explosive Batting',

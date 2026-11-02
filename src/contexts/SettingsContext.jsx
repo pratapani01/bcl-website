@@ -10,9 +10,9 @@ import { db } from '../firebase/config'
 // ── Default values (used before Firestore loads / first run) ──
 export const DEFAULT_SETTINGS = {
   registrationOpen:   false,
-  announcementText:   "BCL Season 1 – India's biggest grassroots cricket league is here!",
-  popupText:          "Welcome to BCL! Registrations opening soon. Stay tuned for updates.",
-  comingSoonText:     "BCL T20 registrations will open shortly. Stay connected and don't miss your chance to play.",
+  announcementText:   "BWCL Season 1 – India's biggest grassroots women's cricket league is here!",
+  popupText:          "Welcome to BWCL! Registrations opening soon. Stay tuned for updates.",
+  comingSoonText:     "BWCL T20 registrations will open shortly. Stay connected and don't miss your chance to play.",
   whatsappNumber:     "919250324379",
   batsmanFormLink:    "https://forms.gle/TkUSWHGjo6NGrpG28",
   bowlerFormLink:     "https://forms.gle/QUT1S3Sa195uS4YPA",
@@ -21,8 +21,8 @@ export const DEFAULT_SETTINGS = {
   prizeRunnerUp:      "₹7 Lakhs",
   prizeAuctionBase:   "₹51K",
   trialsCityCount:    "20+",
-  heroTitle:          "Bharatiya Cricket League",
-  heroSubtitle:       "Season 1 Registrations Coming Soon",
+  heroTitle:          "Bharatiya Women Cricket League",
+  heroSubtitle:       "Built for women cricketers. Season 1 registrations coming soon.",
   auctionText:        "Minimum Base Price",
   showPrizeSection:   true,
   showTrialsSection:  true,

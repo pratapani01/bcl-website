@@ -21,10 +21,10 @@ export default function Teams() {
               Season 1
             </span>
             <h1 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ letterSpacing: '-1px' }}>
-              BCL Franchises
+              BWCL Franchises
             </h1>
             <p className="text-white/70 text-lg max-w-xl mx-auto">
-              10 cities. 10 franchises. One winner. Explore every team competing in BCL Season 1.
+              10 cities. 10 franchises. One winner. Explore every team competing in BWCL Season 1.
             </p>
           </motion.div>
         </div>

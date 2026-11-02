@@ -9,7 +9,7 @@ const SECTIONS = [
   { key: 'showPrizeSection',  icon: '💰', label: 'Prize Money Section',  desc: 'The ₹22L prize pool cards on the homepage' },
   { key: 'showTrialsSection', icon: '🏙️', label: 'Trials Cities Section', desc: 'The scrolling cities strip' },
   { key: 'showTimeline',      icon: '📅', label: 'Timeline / Schedule',   desc: 'Event timeline section' },
-  { key: 'showTeamsSection',  icon: '🏏', label: 'Teams Section',         desc: 'BCL franchise teams grid' },
+  { key: 'showTeamsSection',  icon: '🏏', label: 'Teams Section',         desc: 'BWCL franchise teams grid' },
 ]
 
 export default function SectionsPage() {

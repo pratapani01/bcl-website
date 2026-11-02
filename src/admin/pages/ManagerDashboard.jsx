@@ -62,7 +62,7 @@ export default function ManagerDashboard() {
             { label: 'Winner Prize',     value: settings.prizeWinner           || '—' },
             { label: 'Runner-Up Prize',  value: settings.prizeRunnerUp         || '—' },
             { label: 'Auction Base',     value: settings.prizeAuctionBase      || '—' },
-            { label: 'Batsman Form',     value: settings.batsmanFormLink    ? '✅ Set' : '⚠️ Not set' },
+            { label: 'Batter Form',     value: settings.batsmanFormLink    ? '✅ Set' : '⚠️ Not set' },
             { label: 'Bowler Form',      value: settings.bowlerFormLink     ? '✅ Set' : '⚠️ Not set' },
             { label: 'All-Rounder Form', value: settings.allRounderFormLink ? '✅ Set' : '⚠️ Not set' },
           ].map(row => (

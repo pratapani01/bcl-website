@@ -42,7 +42,7 @@ export default function Navbar() {
   ]
 
   const desktopRoles = [
-    { icon: '🏏', label: 'Batsman',     formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
+    { icon: '🏏', label: 'Batter',      formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
     { icon: '⚾', label: 'Bowler',      formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
     { icon: '⭐', label: 'All Rounder', formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA' },
   ]
@@ -56,17 +56,17 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-12 h-12 rounded-full overflow-hidden bg-bcl-blue flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <img src="/assets/logo.png" alt="BCL Logo" className="w-full h-full object-cover"
-                onError={e => { e.target.style.display='none'; e.target.parentNode.innerHTML='<span class="text-white font-black text-lg">BCL</span>' }} />
+              <img src="/assets/logo.png" alt="BWCL Logo" className="w-full h-full object-cover"
+                onError={e => { e.target.style.display='none'; e.target.parentNode.innerHTML='<span class="text-white font-black text-xs">BWCL</span>' }} />
             </div>
             <div className="hidden sm:block">
-              <p className="text-bcl-blue font-black text-sm leading-none tracking-widest uppercase">Bharatiya</p>
+              <p className="text-bcl-blue font-black text-sm leading-none tracking-widest uppercase">Bharatiya Women</p>
               <p className="text-bcl-gold font-black text-sm leading-none tracking-widest uppercase">Cricket League</p>
             </div>
           </Link>
 
-          <span className="sm:hidden absolute left-1/2 -translate-x-1/2 text-bcl-blue font-black text-base tracking-widest uppercase pointer-events-none select-none">
-            Bharatiya Cricket League
+          <span className="sm:hidden absolute left-1/2 -translate-x-1/2 text-bcl-blue font-black text-[11px] leading-tight text-center tracking-widest uppercase pointer-events-none select-none">
+            Bharatiya Women<br />Cricket League
           </span>
 
           <nav className="hidden md:flex items-center gap-8">

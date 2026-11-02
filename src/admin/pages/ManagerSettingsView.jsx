@@ -40,7 +40,7 @@ export default function ManagerSettingsView() {
         <Card>
           <CardHead icon="🔗" title="Registration Form Links" />
           <div className="p-5 flex flex-col gap-3">
-            <Field label="Batsman Form"     value={settings.batsmanFormLink    || '(not set)'} readOnly />
+            <Field label="Batter Form"     value={settings.batsmanFormLink    || '(not set)'} readOnly />
             <Field label="Bowler Form"      value={settings.bowlerFormLink     || '(not set)'} readOnly />
             <Field label="All-Rounder Form" value={settings.allRounderFormLink || '(not set)'} readOnly />
           </div>

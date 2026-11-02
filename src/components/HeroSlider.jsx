@@ -28,8 +28,8 @@ export default function HeroSlider() {
   // Dynamic titles: slide 0 uses heroTitle/heroSubtitle from Firestore
   const slides = STATIC_SLIDES.map((s, i) => ({
     ...s,
-    title:    i === 0 ? (settings.heroTitle    || 'Bharatiya Cricket League') : (i === 1 ? 'Your Stage Awaits'   : `${settings.prizeWinner || '₹15 Lakhs'} in Prizes`),
-    subtitle: i === 0 ? (settings.heroSubtitle || 'Season 1 Registrations Coming Soon') : (i === 1 ? 'Trials happening across India. Get scouted, get auctioned, get playing.' : `Winner takes ${settings.prizeWinner || '₹15 Lakhs'} · Runner Up wins ${settings.prizeRunnerUp || '₹7 Lakhs'}`),
+    title:    i === 0 ? (settings.heroTitle    || 'Bharatiya Women Cricket League') : (i === 1 ? 'Your Stage Awaits'   : `${settings.prizeWinner || '₹15 Lakhs'} in Prizes`),
+    subtitle: i === 0 ? (settings.heroSubtitle || 'Built for women cricketers. Season 1 registrations coming soon.') : (i === 1 ? 'Trials happening across India. Get scouted, get auctioned, get playing.' : `Winner takes ${settings.prizeWinner || '₹15 Lakhs'} · Runner Up wins ${settings.prizeRunnerUp || '₹7 Lakhs'}`),
   }))
 
   useEffect(() => {
