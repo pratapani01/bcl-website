@@ -96,9 +96,6 @@ export default function TermsModal({ formUrl, roleLabel, onClose, infoOnly = fal
                 <strong>Women Only:</strong> Only <strong>women cricketers</strong> are allowed to participate in this league.
               </p>
               <p className="text-amber-800 text-sm leading-relaxed">
-                <strong>Age Eligibility:</strong> Only users aged between <strong>18 and 45 years</strong> are allowed to use this platform.
-              </p>
-              <p className="text-amber-800 text-sm leading-relaxed">
                 Players who have played any official <strong>Board-level or National-level cricket</strong>{' '}
                 (e.g., BCCI tournaments, state-level official tournaments) are{' '}
                 <strong>NOT allowed to participate</strong>.
@@ -150,7 +147,7 @@ export default function TermsModal({ formUrl, roleLabel, onClose, infoOnly = fal
                 <span className="text-sm text-gray-700 leading-snug">
                   I agree to the{' '}
                   <strong className="text-bcl-blue">terms and conditions</strong>{' '}
-                  and confirm I am eligible to participate in BWCL Season 1.
+                  and confirm I am eligible to participate in UPWCL Season 1.
                 </span>
               </label>
             )}

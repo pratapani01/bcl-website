@@ -1,6 +1,6 @@
-# 🏏 Bharatiya Women Cricket League (BWCL) – Official Website
+# 🏏 Uttar Pradesh Women Cricket League (UPWCL) – Official Website
 
-A premium, multi-page React website for Bharatiya Women Cricket League (BWCL) Season 1 — a women-only cricket league.
+A premium, multi-page React website for Uttar Pradesh Women Cricket League (UPWCL) Season 1 — a women-only cricket league.
 
 ---
 
@@ -37,7 +37,7 @@ src/
 │   ├── Home.jsx            # Full homepage with all sections
 │   ├── Teams.jsx           # All teams grid
 │   ├── TeamDetail.jsx      # Dynamic team detail page
-│   ├── About.jsx           # About BWCL page
+│   ├── About.jsx           # About UPWCL page
 │   └── Contact.jsx         # Contact + WhatsApp form
 ├── data/
 │   └── teams.js            # All 10 team data
@@ -53,20 +53,20 @@ Place images in the `public/assets/` folder (create it if it doesn't exist):
 ```
 public/
 └── assets/
-    ├── logo.png             # BWCL Logo
+    ├── logo.png             # UPWCL Logo
     ├── img-hero1.jpg        # Hero slide 1
     ├── img-hero2.jpg        # Hero slide 2
     ├── img1.jpg – img8.jpg  # Gallery images
-    ├── team1.png            # Delhi Dynamos
-    ├── team2.png            # Mumbai Strikers
-    ├── team3.png            # Bengaluru Blasters
-    ├── team4.png            # Chennai Challengers
-    ├── team5.png            # Kolkata Kings
-    ├── team6.png            # Hyderabad Hawks
-    ├── team7.png            # Jaipur Royals
-    ├── team8.png            # Lucknow Lions
-    ├── team9.png            # Pune Panthers
-    └── team10.png           # Ahmedabad Avengers
+    ├── team1.png            # Lucknow Nawabs
+    ├── team2.png            # Kanpur Strikers
+    ├── team3.png            # Varanasi Warriors
+    ├── team4.png            # Agra Aces
+    ├── team5.png            # Prayagraj Panthers
+    ├── team6.png            # Meerut Mavericks
+    ├── team7.png            # Gorakhpur Gladiators
+    ├── team8.png            # Bareilly Blazers
+    ├── team9.png            # Jhansi Queens
+    └── team10.png           # Ghaziabad Giants
 ```
 
 > ✅ All image placeholders are handled gracefully — the site works perfectly even without images.
@@ -86,7 +86,7 @@ Search for `GOOGLE_FORM_URL` in:
 Replace `'https://forms.google.com'` with your actual Google Form URL.
 
 ### Update WhatsApp Number
-Search for `WA_NUMBER` or `9250324379` and replace with your number.
+Search for `WA_NUMBER` or `9889370894` and replace with your number.
 
 ### Update Team Data
 Edit `src/data/teams.js` to update team names, cities, descriptions, and colors.
@@ -100,7 +100,7 @@ Edit `src/data/teams.js` to update team names, cities, descriptions, and colors.
 | `/` | Home |
 | `/teams` | All Teams |
 | `/team/:teamName` | Team Detail |
-| `/about` | About BWCL |
+| `/about` | About UPWCL |
 | `/contact` | Contact |
 
 ---
@@ -108,8 +108,8 @@ Edit `src/data/teams.js` to update team names, cities, descriptions, and colors.
 ## 🎨 Design
 
 - **Font**: Poppins (Google Fonts)
-- **Primary**: `#1B3A6B` (BWCL Blue)
-- **Accent**: `#C9A227` (BWCL Gold)
+- **Primary**: `#1B3A6B` (UPWCL Blue)
+- **Accent**: `#C9A227` (UPWCL Gold)
 - **Red**: `#E63946`
 - **Theme**: White, clean, professional sports
 
@@ -122,4 +122,4 @@ Instagram: [@animesh_pratap_singh](https://instagram.com/animesh_pratap_singh)
 
 ---
 
-© All Rights Reserved by Team BWCL
+© All Rights Reserved by Team UPWCL

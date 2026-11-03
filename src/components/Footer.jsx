@@ -28,21 +28,21 @@ export default function Footer() {
               <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                 <img
                   src="/assets/logo.png"
-                  alt="BWCL"
+                  alt="UPWCL"
                   className="w-10 h-10 object-cover rounded-full"
                   onError={(e) => {
                     e.target.style.display = 'none'
-                    e.target.parentNode.innerHTML = `<span class="text-white font-black text-xs">BWCL</span>`
+                    e.target.parentNode.innerHTML = `<span class="text-white font-black text-xs">UPWCL</span>`
                   }}
                 />
               </div>
               <div>
-                <p className="font-black text-sm tracking-widest uppercase">Bharatiya Women</p>
-                <p className="text-bcl-gold font-black text-sm tracking-widest uppercase">Cricket League</p>
+                <p className="font-black text-sm tracking-widest uppercase">Uttar Pradesh</p>
+                <p className="text-bcl-gold font-black text-sm tracking-widest uppercase">Women Cricket League</p>
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Where Passion Meets Opportunity. India's premier grassroots women's cricket league, bridging talent and top-level competition for women cricketers.
+              Where Passion Meets Opportunity. Uttar Pradesh's premier grassroots women's cricket league, bridging talent and top-level competition for women cricketers.
             </p>
             {/* Social Icons */}
             <div className="flex gap-3 mt-2">
@@ -76,7 +76,7 @@ export default function Footer() {
               {[
                 { to: '/', label: 'Home' },
                 { to: '/teams', label: 'Teams' },
-                { to: '/about', label: 'About BWCL' },
+                { to: '/about', label: 'About UPWCL' },
                 { to: '/contact', label: 'Contact Us' },
               ].map((l) => (
                 <li key={l.to}>
@@ -104,20 +104,20 @@ export default function Footer() {
             <h4 className="font-bold text-base mb-5 text-bcl-gold uppercase tracking-widest text-sm">Contact</h4>
             <div className="flex flex-col gap-3">
               <a
-                href="https://wa.me/919250324379"
+                href="https://wa.me/919889370894"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-white/70 hover:text-white text-sm transition-colors"
               >
                 <span className="text-xl">💬</span>
-                <span>WhatsApp: +91 92503 24379</span>
+                <span>WhatsApp: +91 98893 70894</span>
               </a>
               <a
-                href="tel:9250324379"
+                href="tel:9889370894"
                 className="flex items-center gap-3 text-white/70 hover:text-white text-sm transition-colors"
               >
                 <span className="text-xl">📞</span>
-                <span>Call: 92503 24379</span>
+                <span>Call: 98893 70894</span>
               </a>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
-          <p>© {year} All Rights Reserved by Team BWCL</p>
+          <p>© {year} All Rights Reserved by Team UPWCL</p>
           <p>
             Designed by{' '}
             <a

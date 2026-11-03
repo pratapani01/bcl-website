@@ -4,7 +4,7 @@ import { useSettings } from '../contexts/SettingsContext'
 
 export default function ComingSoonModal({ onClose }) {
   const { settings } = useSettings()
-  const number = settings.whatsappNumber || '919250324379'
+  const number = settings.whatsappNumber || '919889370894'
 
   useEffect(() => {
     const h = (e) => { if (e.key === 'Escape') onClose() }
@@ -32,7 +32,7 @@ export default function ComingSoonModal({ onClose }) {
           <div className="p-8">
             <h2 className="text-2xl font-black text-bcl-blue text-center mb-3">Coming Soon 🚀</h2>
             <p className="text-gray-600 text-center text-sm leading-relaxed mb-6">
-              {settings.comingSoonText || "BWCL T20 registrations will open shortly. Stay connected and don't miss your chance to play."}
+              {settings.comingSoonText || "UPWCL T20 registrations will open shortly. Stay connected and don't miss your chance to play."}
             </p>
             <hr className="border-gray-200 mb-5" />
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest text-center mb-4">Follow us for updates</p>
@@ -47,7 +47,7 @@ export default function ComingSoonModal({ onClose }) {
               </a>
               <a href="https://www.facebook.com/profile.php?id=61570680840778" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors">
                 <span className="text-xl">📘</span>
-                <div><p className="text-xs text-gray-500 font-medium">Facebook</p><p className="text-sm font-bold text-blue-600">BWCL T20</p></div>
+                <div><p className="text-xs text-gray-500 font-medium">Facebook</p><p className="text-sm font-bold text-blue-600">UPWCL T20</p></div>
               </a>
             </div>
             <button onClick={onClose} className="mt-6 w-full bg-bcl-blue text-white py-3 rounded-full text-sm font-semibold hover:bg-bcl-gold hover:text-bcl-blue transition-all duration-300">Close</button>

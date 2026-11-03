@@ -20,7 +20,7 @@ const steps = [
     icon: '💰',
     number: '03',
     title: 'Auction',
-    desc: 'Selected players enter the BWCL Auction with a base price of ₹51,000.',
+    desc: 'Selected players enter the UPWCL Auction with a base price of ₹2,000.',
     color: '#C9A227',
     highlight: true,
   },
@@ -34,8 +34,8 @@ const steps = [
   {
     icon: '🏆',
     number: '05',
-    title: 'Play in BWCL S1',
-    desc: 'Take the field in BWCL Season 1. Play in national stadiums under live coverage.',
+    title: 'Play in UPWCL S1',
+    desc: 'Take the field in UPWCL Season 1. Play in professional stadiums under live coverage.',
     color: '#E63946',
   },
 ]
@@ -58,7 +58,7 @@ export default function Timeline() {
           </span>
           <h2 className="section-title">Registration Process</h2>
           <p className="section-subtitle">
-            Your journey from registration to playing in BWCL Season 1 — five simple steps.
+            Your journey from registration to playing in UPWCL Season 1 — five simple steps.
           </p>
         </motion.div>
 
@@ -140,7 +140,7 @@ export default function Timeline() {
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
                 {step.highlight && (
                   <span className="inline-block mt-2 text-xs font-semibold text-bcl-gold bg-bcl-gold/10 px-3 py-1 rounded-full">
-                    ⭐ Base Price: ₹51,000
+                    ⭐ Base Price: ₹2,000
                   </span>
                 )}
               </div>

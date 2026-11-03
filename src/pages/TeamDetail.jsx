@@ -55,7 +55,7 @@ export default function TeamDetail() {
             </div>
 
             <div>
-              <span className="text-white/60 text-xs font-bold tracking-widest uppercase">BWCL Season 1</span>
+              <span className="text-white/60 text-xs font-bold tracking-widest uppercase">UPWCL Season 1</span>
               <h1 className="text-4xl md:text-5xl font-black text-white mt-1 mb-2" style={{ letterSpacing: '-1px' }}>
                 {team.name}
               </h1>
@@ -124,7 +124,7 @@ export default function TeamDetail() {
                 {[
                   { label: 'Home City', value: team.city, icon: '📍' },
                   { label: 'Abbreviation', value: team.abbr, icon: '🏏' },
-                  { label: 'Season', value: 'BWCL Season 1', icon: '📅' },
+                  { label: 'Season', value: 'UPWCL Season 1', icon: '📅' },
                   { label: 'Status', value: 'Recruiting', icon: '🟢' },
                   ...(team.captain ? [{ label: 'Captain', value: team.captain, icon: '👑' }] : []),
                   ...(team.strength ? [{ label: 'Team Strength', value: team.strength, icon: '💪' }] : []),
@@ -145,7 +145,7 @@ export default function TeamDetail() {
               <div className="text-center">
                 <span className="text-3xl block mb-2">🏏</span>
                 <h3 className="font-bold text-bcl-blue text-sm mb-1">Players Announced Soon</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">The squad will be revealed after the BWCL Auction. Stay tuned!</p>
+                <p className="text-gray-500 text-xs leading-relaxed">The squad will be revealed after the UPWCL Auction. Stay tuned!</p>
               </div>
             </div>
 
@@ -155,7 +155,7 @@ export default function TeamDetail() {
               className="w-full py-4 rounded-xl font-bold text-sm text-center text-white transition-all duration-300 hover:opacity-90 hover:-translate-y-1 shadow-lg"
               style={{ backgroundColor: color }}
             >
-              Register to Play in BWCL →
+              Register to Play in UPWCL →
             </button>
           </motion.div>
         </div>

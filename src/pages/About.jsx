@@ -4,8 +4,8 @@ import RoleSelectModal from '../components/RoleSelectModal'
 
 const stats = [
   { value: '10', label: 'Franchise Teams', icon: '🏏' },
-  { value: '20+', label: 'Trial Cities', icon: '📍' },
-  { value: '₹22L', label: 'Prize Pool', icon: '🏆' },
+  { value: '10', label: 'Trial Cities', icon: '📍' },
+  { value: '₹72K', label: 'Prize Pool', icon: '🏆' },
   { value: '∞', label: 'Dreams Fuelled', icon: '⭐' },
 ]
 
@@ -13,28 +13,28 @@ const values = [
   {
     icon: '🎯',
     title: 'Our Vision',
-    desc: 'To become India\'s most respected grassroots women\'s cricket league — a platform that bridges the gap between local women\'s talent and professional cricket. We envision a future where every passionate woman cricketer gets a fair shot at her dream.',
+    desc: 'To become Uttar Pradesh\'s most respected grassroots women\'s cricket league — a platform that bridges the gap between local women\'s talent and professional cricket. We envision a future where every passionate woman cricketer gets a fair shot at her dream.',
     color: '#1B3A6B',
   },
   {
     icon: '🚀',
     title: 'Our Mission',
-    desc: 'To discover, develop, and showcase the raw talent of India\'s women cricketers through a structured, professional tournament. BWCL provides real trials, real auctions, real franchises — and real opportunities.',
+    desc: 'To discover, develop, and showcase the raw talent of Uttar Pradesh\'s women cricketers through a structured, professional tournament. UPWCL provides real trials, real auctions, real franchises — and real opportunities.',
     color: '#E63946',
   },
   {
     icon: '💡',
     title: 'What Makes Us Different',
-    desc: 'Unlike other local tournaments, BWCL is built exclusively for women cricketers and operates like a professional league — with franchise teams, a player auction system, live broadcasting, national stadium venues, and direct scout exposure. We are not just a tournament; we are a career launchpad.',
+    desc: 'Unlike other local tournaments, UPWCL is built exclusively for women cricketers and operates like a professional league — with franchise teams, a player auction system, live broadcasting, professional stadium venues, and direct scout exposure. We are not just a tournament; we are a career launchpad.',
     color: '#C9A227',
   },
 ]
 
 const milestones = [
-  { year: '2024', event: 'BWCL Founded', desc: 'Bharatiya Women Cricket League established with a vision to transform women\'s grassroots cricket.' },
-  { year: 'Early 2025', event: 'City Trials Begin', desc: 'Trials kick off across 20+ cities. Thousands of players attend.' },
-  { year: 'Mid 2025', event: 'BWCL Auction', desc: 'Selected players enter the franchise auction. Base price: ₹51,000.' },
-  { year: 'Late 2025', event: 'Season 1 Begins', desc: 'BWCL Season 1 launches with 10 franchises playing across national stadiums.' },
+  { year: '2024', event: 'UPWCL Founded', desc: 'Uttar Pradesh Women Cricket League established with a vision to transform women\'s grassroots cricket.' },
+  { year: 'Early 2025', event: 'City Trials Begin', desc: 'Trials kick off across 10 cities. Thousands of players attend.' },
+  { year: 'Mid 2025', event: 'UPWCL Auction', desc: 'Selected players enter the franchise auction. Base price: ₹2,000.' },
+  { year: 'Late 2025', event: 'Season 1 Begins', desc: 'UPWCL Season 1 launches with 10 franchises playing across professional stadiums.' },
 ]
 
 export default function About() {
@@ -57,10 +57,10 @@ export default function About() {
               Our Story
             </span>
             <h1 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ letterSpacing: '-1px' }}>
-              About BWCL
+              About UPWCL
             </h1>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
-              Bharatiya Women Cricket League was born from a simple belief — India's women's cricket talent extends far beyond the stadiums on TV. Every gully, every maidan, every open ground hides a future champion — and she deserves a stage.
+              Uttar Pradesh Women Cricket League was born from a simple belief — Uttar Pradesh's women's cricket talent extends far beyond the stadiums on TV. Every gully, every maidan, every open ground hides a future champion — and she deserves a stage.
             </p>
           </motion.div>
         </div>
@@ -88,7 +88,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* About BWCL */}
+      {/* About UPWCL */}
       <section className="py-20 bg-bcl-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -102,17 +102,17 @@ export default function About() {
                 Who We Are
               </span>
               <h2 className="text-3xl font-black text-bcl-blue mb-6 leading-tight" style={{ letterSpacing: '-0.5px' }}>
-                India's Premier Grassroots Women's Cricket League
+                Uttar Pradesh's Premier Grassroots Women's Cricket League
               </h2>
               <div className="flex flex-col gap-4 text-gray-600 leading-relaxed">
                 <p>
-                  The Bharatiya Women Cricket League (BWCL) is a professionally organized, franchise-based league designed exclusively for women, giving India's grassroots women cricketers a legitimate pathway to professional play.
+                  The Uttar Pradesh Women Cricket League (UPWCL) is a professionally organized, franchise-based league designed exclusively for women, giving Uttar Pradesh's grassroots women cricketers a legitimate pathway to professional play.
                 </p>
                 <p>
-                  From open trials in 20+ cities to a televised auction and national stadium matches — BWCL mirrors the franchise structure of leagues like the WPL at the grassroots level, giving women players the full experience of professional cricket.
+                  From open trials across 10 cities of Uttar Pradesh to a televised auction and professional stadium matches — UPWCL mirrors the franchise structure of leagues like the WPL at the grassroots level, giving women players the full experience of professional cricket.
                 </p>
                 <p>
-                  With a prize pool of ₹22+ Lakhs and player auction base prices of ₹51,000, BWCL is not just a tournament — it is a career-defining opportunity for thousands of women cricketers across India.
+                  With a prize pool of ₹72,000 and player auction base prices of ₹2,000, UPWCL is not just a tournament — it is a career-defining opportunity for thousands of women cricketers across Uttar Pradesh.
                 </p>
               </div>
             </motion.div>
@@ -128,16 +128,16 @@ export default function About() {
               <div className="bcl-gradient rounded-3xl p-10 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-white/10 -translate-y-1/2 translate-x-1/2" />
                 <div className="text-7xl mb-6">🏏</div>
-                <h3 className="text-2xl font-black mb-3">BWCL Season 1</h3>
+                <h3 className="text-2xl font-black mb-3">UPWCL Season 1</h3>
                 <p className="text-white/70 leading-relaxed mb-6">
-                  The inaugural season of Bharatiya Women Cricket League promises to be a landmark moment in Indian women's cricket.
+                  The inaugural season of Uttar Pradesh Women Cricket League promises to be a landmark moment for women's cricket in Uttar Pradesh.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { val: '10', lbl: 'Teams' },
-                    { val: '20+', lbl: 'Cities' },
-                    { val: '₹15L', lbl: 'Top Prize' },
-                    { val: '51K', lbl: 'Auction Base' },
+                    { val: '10', lbl: 'Cities' },
+                    { val: '₹51K', lbl: 'Top Prize' },
+                    { val: '₹2,000', lbl: 'Auction Base' },
                   ].map((s, i) => (
                     <div key={i} className="bg-white/10 rounded-xl p-4">
                       <p className="text-2xl font-black text-bcl-gold">{s.val}</p>
@@ -198,7 +198,7 @@ export default function About() {
             <span className="inline-block text-xs font-bold tracking-widest uppercase text-bcl-gold bg-bcl-gold/10 px-4 py-1.5 rounded-full mb-4">
               Journey
             </span>
-            <h2 className="section-title">BWCL Milestones</h2>
+            <h2 className="section-title">UPWCL Milestones</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -238,10 +238,10 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-              Be Part of the BWCL Story
+              Be Part of the UPWCL Story
             </h2>
             <p className="text-white/70 mb-8">
-              Season 1 is just the beginning. Join now and become a founding player of the Bharatiya Women Cricket League.
+              Season 1 is just the beginning. Join now and become a founding player of the Uttar Pradesh Women Cricket League.
             </p>
             <button
               onClick={() => setRoleModalOpen(true)}

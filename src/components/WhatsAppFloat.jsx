@@ -4,7 +4,7 @@ const WHATSAPP_GROUP = 'https://chat.whatsapp.com/Jk8TEuezlcC7D8jUHaHHJe?mode=gi
 
 export default function WhatsAppFloat() {
   const { settings } = useSettings()
-  const number = settings.whatsappNumber || '919250324379'
+  const number = settings.whatsappNumber || '919889370894'
 
   const handleClick = () => window.open(WHATSAPP_GROUP, '_blank', 'noopener,noreferrer')
 

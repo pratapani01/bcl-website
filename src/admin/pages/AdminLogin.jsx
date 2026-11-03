@@ -52,13 +52,13 @@ export default function AdminLogin() {
               <div className="w-20 h-20 mx-auto mb-5 rounded-full overflow-hidden border-2 border-white/20 bg-white/10 flex items-center justify-center shadow-xl">
                 <img
                   src="/assets/logo.png"
-                  alt="BWCL"
+                  alt="UPWCL"
                   className="w-full h-full object-cover"
-                  onError={e => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<span class="text-white font-black text-2xl">BWCL</span>' }}
+                  onError={e => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<span class="text-white font-black text-2xl">UPWCL</span>' }}
                 />
               </div>
               <p className="text-bcl-gold text-[11px] font-bold uppercase tracking-[0.2em] mb-1">Admin Portal</p>
-              <h1 className="text-white font-black text-2xl leading-tight">Bharatiya Women Cricket League</h1>
+              <h1 className="text-white font-black text-2xl leading-tight">Uttar Pradesh Women Cricket League</h1>
               <p className="text-white/50 text-sm mt-1">Secure Management System</p>
             </div>
           </div>
@@ -99,14 +99,14 @@ export default function AdminLogin() {
 
             <div className="mt-6 pt-5 border-t border-gray-100 text-center">
               <a href="/" className="text-xs text-gray-400 hover:text-bcl-blue transition-colors">
-                ← Back to BWCL website
+                ← Back to UPWCL website
               </a>
             </div>
           </div>
         </div>
 
         <p className="text-center text-white/30 text-xs mt-5">
-          Access restricted to authorised BWCL accounts only
+          Access restricted to authorised UPWCL accounts only
         </p>
       </motion.div>
     </div>

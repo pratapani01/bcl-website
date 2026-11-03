@@ -36,9 +36,9 @@ export default function AdminDashboard() {
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
         <Stat icon="📋" label="Registrations"  value={settings.registrationOpen ? 'OPEN' : 'CLOSED'} green={settings.registrationOpen} red={!settings.registrationOpen} />
-        <Stat icon="🏙️" label="Trial Cities"   value={settings.trialsCityCount || '20+'} />
-        <Stat icon="🏆" label="Winner Prize"   value={settings.prizeWinner || '₹15 Lakhs'} />
-        <Stat icon="💰" label="Runner-Up Prize" value={settings.prizeRunnerUp || '₹7 Lakhs'} />
+        <Stat icon="🏙️" label="Trial Cities"   value={settings.trialsCityCount || '10'} />
+        <Stat icon="🏆" label="Winner Prize"   value={settings.prizeWinner || '₹51,000'} />
+        <Stat icon="💰" label="Runner-Up Prize" value={settings.prizeRunnerUp || '₹21,000'} />
       </div>
 
       {/* Quick actions */}

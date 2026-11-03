@@ -61,15 +61,15 @@ export default function RegistrationPage() {
               label="WhatsApp Number (with country code)"
               value={whatsapp}
               onChange={e => setWhatsapp(e.target.value)}
-              placeholder="919250324379"
+              placeholder="919889370894"
               hint="Format: 91XXXXXXXXXX — no + sign, no spaces"
             />
             <Field
               label="Trials City Count"
               value={cities}
               onChange={e => setCities(e.target.value)}
-              placeholder="20+"
-              hint='Displayed in the Trials section e.g. "20+", "25 Cities"'
+              placeholder="10"
+              hint='Displayed in the Trials section e.g. "10", "12 Cities"'
             />
           </div>
         </Card>

@@ -35,20 +35,20 @@ function PrizeSection() {
           <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 flex flex-col items-center text-center">
             <div className="text-5xl mb-4">🥈</div>
             <p className="text-white/60 text-sm font-semibold uppercase tracking-widest mb-2">Runner Up</p>
-            <p className="text-4xl font-black text-white">{settings.prizeRunnerUp || '₹7 Lakhs'}</p>
+            <p className="text-4xl font-black text-white">{settings.prizeRunnerUp || '₹21,000'}</p>
             <p className="text-white/50 text-sm mt-2">Cash Prize + Trophy</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }} className="bg-gradient-to-br from-bcl-gold to-yellow-400 rounded-2xl p-8 flex flex-col items-center text-center shadow-2xl shadow-bcl-gold/30 md:-mt-4 md:mb-4">
             <div className="text-6xl mb-4">🏆</div>
             <p className="text-bcl-blue text-sm font-bold uppercase tracking-widest mb-2">Winner</p>
-            <p className="text-5xl font-black text-bcl-blue">{settings.prizeWinner || '₹15 Lakhs'}</p>
+            <p className="text-5xl font-black text-bcl-blue">{settings.prizeWinner || '₹51,000'}</p>
             <p className="text-bcl-blue/70 text-sm mt-2">Cash Prize + Trophy + Medal</p>
             <span className="mt-4 bg-bcl-blue text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Grand Prize</span>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 flex flex-col items-center text-center">
             <div className="text-5xl mb-4">💰</div>
             <p className="text-white/60 text-sm font-semibold uppercase tracking-widest mb-2">Player Auction</p>
-            <p className="text-4xl font-black text-white">{settings.prizeAuctionBase || '₹51K'}</p>
+            <p className="text-4xl font-black text-white">{settings.prizeAuctionBase || '₹2,000'}</p>
             <p className="text-white/50 text-sm mt-2">{settings.auctionText || 'Minimum Base Price'}</p>
           </motion.div>
         </div>
@@ -59,19 +59,19 @@ function PrizeSection() {
 
 function TrialsSection() {
   const { settings } = useSettings()
-  const cityCount = settings.trialsCityCount || '20+'
-  const cities = ['Delhi','Mumbai','Kolkata','Chennai','Bengaluru','Hyderabad','Pune','Jaipur','Lucknow','Ahmedabad','Chandigarh','Indore','Bhopal','Nagpur','Surat','Patna','Ranchi','Kochi','Bhubaneswar','Coimbatore']
+  const cityCount = settings.trialsCityCount || '10'
+  const cities = ['Lucknow','Kanpur','Varanasi','Agra','Prayagraj','Meerut','Gorakhpur','Bareilly','Jhansi','Ghaziabad']
   return (
     <section className="py-16 bg-bcl-light overflow-hidden" id="trials">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
-          <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-blue bg-bcl-blue/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">Nationwide</span>
-          <h2 className="section-title">Trials in {cityCount} Cities</h2>
+          <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-blue bg-bcl-blue/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">Uttar Pradesh</span>
+          <h2 className="section-title">Trials in {cityCount} Cities of Uttar Pradesh</h2>
           <p className="section-subtitle">We're coming to your city. Register and attend trials at your nearest venue.</p>
         </Section>
         <div className="relative overflow-hidden">
           <motion.div animate={{ x: [0, -2000] }} transition={{ repeat: Infinity, duration: 30, ease: 'linear' }} className="flex gap-4 whitespace-nowrap">
-            {[...cities, ...cities].map((city, i) => (
+            {[...cities, ...cities, ...cities].map((city, i) => (
               <span key={i} className="inline-flex items-center gap-2 bg-white border border-gray-200 text-bcl-blue font-semibold text-sm px-5 py-2.5 rounded-full shadow-sm flex-shrink-0">📍 {city}</span>
             ))}
           </motion.div>
@@ -88,9 +88,9 @@ function RoleCards() {
   const [comingSoonOpen, setComingSoon]   = useState(false)
 
   const roles = [
-    { icon: '🏏', title: 'Batter',      price: '₹2,000', color: '#1B3A6B', features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],       formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
-    { icon: '⚾', title: 'Bowler',      price: '₹2,000', color: '#E63946', features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],           formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
-    { icon: '⭐', title: 'All Rounder', price: '₹3,000', color: '#C9A227', features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'], popular: true, formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA' },
+    { icon: '🏏', title: 'Batter',      price: '₹1,000', color: '#1B3A6B', features: ['Solo batting trials', 'Power hitting assessment', 'Technical evaluation'],       formUrl: settings.batsmanFormLink    || 'https://forms.gle/TkUSWHGjo6NGrpG28' },
+    { icon: '⚾', title: 'Bowler',      price: '₹1,000', color: '#E63946', features: ['Speed gun assessment', 'Line & length analysis', 'Variation testing'],           formUrl: settings.bowlerFormLink     || 'https://forms.gle/QUT1S3Sa195uS4YPA' },
+    { icon: '⭐', title: 'All Rounder', price: '₹1,500', color: '#C9A227', features: ['Full batting + bowling trials', 'Fielding drills', 'Premium category'], popular: true, formUrl: settings.allRounderFormLink || 'https://forms.gle/thqKgAwsuTqt4VARA' },
   ]
 
   return (
@@ -139,10 +139,10 @@ function RoleCards() {
 
 function WhyJoin() {
   const perks = [
-    { icon: '🏟️', title: 'National & International Stadiums', desc: 'Play on iconic grounds across India.' },
+    { icon: '🏟️', title: 'Professional Stadiums',             desc: 'Play on top grounds across Uttar Pradesh.' },
     { icon: '📺', title: 'Live Media Broadcasting',            desc: 'Every match streamed live.' },
     { icon: '🎖️', title: 'Professional Tournament Experience', desc: "Full lifecycle of professional women's cricket." },
-    { icon: '💰', title: 'High Prize Pool',                    desc: '₹22+ Lakhs in prizes.' },
+    { icon: '💰', title: 'High Prize Pool',                    desc: '₹72,000 in prizes.' },
     { icon: '🔭', title: 'Scout Exposure',                     desc: 'Top scouts watching every trial and match.' },
     { icon: '🤝', title: 'Team Franchise System',              desc: 'Get auctioned and represent your city.' },
   ]
@@ -151,7 +151,7 @@ function WhyJoin() {
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-blue bg-bcl-blue/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">Benefits</span>
-          <h2 className="section-title">Why Join BWCL?</h2>
+          <h2 className="section-title">Why Join UPWCL?</h2>
           <p className="section-subtitle">More than a tournament — a launchpad for your cricket career.</p>
         </Section>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -177,7 +177,7 @@ function TeamsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <span className="block text-center text-xs font-bold tracking-widest uppercase text-bcl-blue bg-bcl-blue/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-4">Franchises</span>
-          <h2 className="section-title">BWCL Teams</h2>
+          <h2 className="section-title">UPWCL Teams</h2>
           <p className="section-subtitle">10 powerful franchises. 10 cities. One champion.</p>
         </Section>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -198,7 +198,7 @@ function Tagline() {
         </motion.p>
         <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
           className="text-gray-400 mt-4 text-lg">
-          India's most exciting grassroots women's cricket league — BWCL Season 1
+          Uttar Pradesh's most exciting grassroots women's cricket league — UPWCL Season 1
         </motion.p>
       </div>
     </section>
@@ -208,7 +208,7 @@ function Tagline() {
 function CtaSection() {
   const { settings } = useSettings()
   const REGISTRATION_OPEN = settings.registrationOpen || false
-  const number = settings.whatsappNumber || '919250324379'
+  const number = settings.whatsappNumber || '919889370894'
   const [open, setOpen]             = useState(false)
   const [comingSoonOpen, setComingSoon] = useState(false)
   return (
@@ -218,7 +218,7 @@ function CtaSection() {
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="inline-block bg-bcl-gold text-bcl-blue text-xs font-black px-5 py-1.5 rounded-full uppercase tracking-widest mb-6">⚡ Limited Slots</span>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{ letterSpacing: '-1px' }}>Limited Slots Available</h2>
-          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Don't miss your chance to play in BWCL Season 1. Registrations are filling up fast — secure your spot today.</p>
+          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Don't miss your chance to play in UPWCL Season 1. Registrations are filling up fast — secure your spot today.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={() => REGISTRATION_OPEN ? setOpen(true) : setComingSoon(true)}
               className="inline-flex items-center justify-center gap-2 bg-bcl-gold text-bcl-blue px-10 py-4 rounded-full font-black text-base hover:bg-white transition-all duration-300 hover:scale-105 shadow-xl shadow-black/20">

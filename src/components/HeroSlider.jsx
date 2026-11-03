@@ -6,7 +6,7 @@ import { useSettings } from '../contexts/SettingsContext'
 
 const STATIC_SLIDES = [
   { image: '/assets/img-hero1.jpg', badge: 'Season 1 – 2026',      accent: '#C9A227', cta: 'Register Now'   },
-  { image: '/assets/img-hero2.jpg', badge: '20+ Cities · Nationwide', accent: '#E63946', cta: 'Join the League' },
+  { image: '/assets/img-hero2.jpg', badge: '10 Cities · Uttar Pradesh', accent: '#E63946', cta: 'Join the League' },
   { image: '/assets/img-hero3.webp', badge: 'Prize Pool',            accent: '#C9A227', cta: 'Register Now'   },
 ]
 
@@ -28,8 +28,8 @@ export default function HeroSlider() {
   // Dynamic titles: slide 0 uses heroTitle/heroSubtitle from Firestore
   const slides = STATIC_SLIDES.map((s, i) => ({
     ...s,
-    title:    i === 0 ? (settings.heroTitle    || 'Bharatiya Women Cricket League') : (i === 1 ? 'Your Stage Awaits'   : `${settings.prizeWinner || '₹15 Lakhs'} in Prizes`),
-    subtitle: i === 0 ? (settings.heroSubtitle || 'Built for women cricketers. Season 1 registrations coming soon.') : (i === 1 ? 'Trials happening across India. Get scouted, get auctioned, get playing.' : `Winner takes ${settings.prizeWinner || '₹15 Lakhs'} · Runner Up wins ${settings.prizeRunnerUp || '₹7 Lakhs'}`),
+    title:    i === 0 ? (settings.heroTitle    || 'Uttar Pradesh Women Cricket League') : (i === 1 ? 'Your Stage Awaits'   : `${settings.prizeWinner || '₹51,000'} in Prizes`),
+    subtitle: i === 0 ? (settings.heroSubtitle || 'Built for women cricketers. Season 1 registrations coming soon.') : (i === 1 ? 'Trials happening across Uttar Pradesh. Get scouted, get auctioned, get playing.' : `Winner takes ${settings.prizeWinner || '₹51,000'} · Runner Up wins ${settings.prizeRunnerUp || '₹21,000'}`),
   }))
 
   useEffect(() => {

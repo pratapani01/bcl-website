@@ -1,4 +1,4 @@
-# BWCL Website v3 — Complete Firebase Setup Guide
+# UPWCL Website v3 — Complete Firebase Setup Guide
 # Simple, Reliable Admin System with Google Sign-In
 
 ═══════════════════════════════════════════════════════════
@@ -172,19 +172,19 @@ on the very first visit. Nothing to set up manually.
 
 Fields stored in settings/main:
   registrationOpen:   false           ← true/false
-  announcementText:   "BWCL Season 1…"
-  popupText:          "Welcome to BWCL…"
+  announcementText:   "UPWCL Season 1…"
+  popupText:          "Welcome to UPWCL…"
   comingSoonText:     "Coming soon…"
-  whatsappNumber:     "919250324379"
+  whatsappNumber:     "919889370894"
   batsmanFormLink:    "https://forms.gle/…"
   bowlerFormLink:     "https://forms.gle/…"
   allRounderFormLink: "https://forms.gle/…"
-  prizeWinner:        "₹15 Lakhs"
-  prizeRunnerUp:      "₹7 Lakhs"
-  prizeAuctionBase:   "₹51K"
+  prizeWinner:        "₹51,000"
+  prizeRunnerUp:      "₹21,000"
+  prizeAuctionBase:   "₹2,000"
   auctionText:        "Minimum Base Price"
-  trialsCityCount:    "20+"
-  heroTitle:          "Bharatiya Women Cricket League"
+  trialsCityCount:    "10"
+  heroTitle:          "Uttar Pradesh Women Cricket League"
   heroSubtitle:       "Built for women cricketers. Season 1 registrations coming soon."
   showPrizeSection:   true
   showTrialsSection:  true

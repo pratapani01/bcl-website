@@ -63,7 +63,7 @@ export default function HomepagePage() {
               label="Hero Title"
               value={heroTitle}
               onChange={e => setHeroTitle(e.target.value)}
-              placeholder="Bharatiya Women Cricket League"
+              placeholder="Uttar Pradesh Women Cricket League"
             />
             <Field
               label="Hero Subtitle"
@@ -82,19 +82,19 @@ export default function HomepagePage() {
               label="Winner Prize"
               value={prizeWinner}
               onChange={e => setPrizeWinner(e.target.value)}
-              placeholder="₹15 Lakhs"
+              placeholder="₹51,000"
             />
             <Field
               label="Runner-Up Prize"
               value={prizeRunner}
               onChange={e => setPrizeRunner(e.target.value)}
-              placeholder="₹7 Lakhs"
+              placeholder="₹21,000"
             />
             <Field
               label="Auction Base Price"
               value={prizeAuction}
               onChange={e => setPrizeAuction(e.target.value)}
-              placeholder="₹51K"
+              placeholder="₹2,000"
             />
           </div>
         </Card>
@@ -108,7 +108,7 @@ export default function HomepagePage() {
               value={auctionLabel}
               onChange={e => setAuctionLabel(e.target.value)}
               placeholder="Minimum Base Price"
-              hint='Displayed under the ₹51K tile in the Prizes section'
+              hint='Displayed under the ₹2,000 tile in the Prizes section'
             />
           </div>
         </Card>
