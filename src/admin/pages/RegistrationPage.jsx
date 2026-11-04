@@ -14,7 +14,7 @@ export default function RegistrationPage() {
   const [toast, setToast]       = useState(null)
 
   useEffect(() => {
-    setRegOpen(settings.registrationOpen ?? false)
+    setRegOpen(settings.registrationOpenRaw ?? settings.registrationOpen ?? false)
     setWhatsapp(settings.whatsappNumber   ?? '')
     setCities(settings.trialsCityCount    ?? '')
   }, [settings])
@@ -41,8 +41,13 @@ export default function RegistrationPage() {
         <Card>
           <CardHead icon="🔄" title="Registration Toggle" subtitle="Turn registrations on or off instantly" />
           <div className="p-5">
-            <div className={`rounded-xl p-4 mb-4 border-2 font-black text-base ${regOpen ? 'bg-green-50 border-green-300 text-green-700' : 'bg-red-50 border-red-300 text-red-700'}`}>
-              {regOpen ? '✅ Registrations are OPEN' : '🚫 Registrations are CLOSED'}
+            {settings.registrationLockedByCode && (
+              <div className="rounded-xl p-4 mb-4 border-2 border-amber-300 bg-amber-50 text-amber-800 text-sm leading-relaxed">
+                <strong>Locked in code:</strong> <code>REGISTRATION_OPEN</code> in <code>src/registrationConfig.js</code> is set to <code>false</code>, so registrations stay CLOSED on the website even if this toggle is ON. Set it to <code>true</code> in the code and redeploy to let this toggle take effect.
+              </div>
+            )}
+            <div className={`rounded-xl p-4 mb-4 border-2 font-black text-base ${regOpen && !settings.registrationLockedByCode ? 'bg-green-50 border-green-300 text-green-700' : 'bg-red-50 border-red-300 text-red-700'}`}>
+              {regOpen && !settings.registrationLockedByCode ? '✅ Registrations are OPEN' : '🚫 Registrations are CLOSED'}
             </div>
             <Toggle
               label="Enable Registrations"

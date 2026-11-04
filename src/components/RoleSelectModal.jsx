@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import TermsModal from './TermsModal'
+import ComingSoonModal from './ComingSoonModal'
 import { useSettings } from '../contexts/SettingsContext'
 
+// Every "Register" button that opens this modal is covered by one check here:
+// when registrations are closed (code switch or admin toggle), the Coming Soon
+// popup is shown instead of the role list and Google Form.
 export default function RoleSelectModal({ onClose }) {
+  const { settings } = useSettings()
+  if (!settings.registrationOpen) return <ComingSoonModal onClose={onClose} />
+  return <RoleSelectList onClose={onClose} />
+}
+
+function RoleSelectList({ onClose }) {
   const { settings } = useSettings()
   const [selectedRole, setSelectedRole] = useState(null)
 

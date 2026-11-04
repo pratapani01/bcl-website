@@ -6,6 +6,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { doc, onSnapshot, setDoc, getDoc } from 'firebase/firestore'
 import { db } from '../firebase/config'
+import REGISTRATION_OPEN_IN_CODE from '../registrationConfig'
 
 // ── Default values (used before Firestore loads / first run) ──
 export const DEFAULT_SETTINGS = {
@@ -71,10 +72,26 @@ function modernize(data) {
   return out
 }
 
-const SettingsContext = createContext({ settings: DEFAULT_SETTINGS, loading: true })
+// Two switches control registration:
+//   1. REGISTRATION_OPEN in src/registrationConfig.js (code)
+//   2. "Enable Registrations" in the admin panel (Firestore)
+// Registrations are open only when BOTH are on. Setting the code switch to
+// false closes registrations everywhere, whatever the admin panel says.
+// registrationOpenRaw keeps the admin panel's own value so the toggle there
+// shows (and saves) what was really chosen.
+function applyCodeSwitch(data) {
+  return {
+    ...data,
+    registrationOpenRaw: !!data.registrationOpen,
+    registrationLockedByCode: !REGISTRATION_OPEN_IN_CODE,
+    registrationOpen: REGISTRATION_OPEN_IN_CODE && !!data.registrationOpen,
+  }
+}
+
+const SettingsContext = createContext({ settings: applyCodeSwitch(DEFAULT_SETTINGS), loading: true })
 
 export function SettingsProvider({ children }) {
-  const [settings, setSettings] = useState(DEFAULT_SETTINGS)
+  const [settings, setSettings] = useState(applyCodeSwitch(DEFAULT_SETTINGS))
   const [loading,  setLoading]  = useState(true)
 
   useEffect(() => {
@@ -86,7 +103,7 @@ export function SettingsProvider({ children }) {
     })
 
     const unsub = onSnapshot(ref, (snap) => {
-      if (snap.exists()) setSettings(modernize({ ...DEFAULT_SETTINGS, ...snap.data() }))
+      if (snap.exists()) setSettings(applyCodeSwitch(modernize({ ...DEFAULT_SETTINGS, ...snap.data() })))
       setLoading(false)
     })
     return unsub
